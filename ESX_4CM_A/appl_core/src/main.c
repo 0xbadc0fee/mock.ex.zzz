@@ -80,7 +80,7 @@ int main(void)
     // Start openSYDE task
     s16_Error += osy_srv_init();
 
-    //Initialize AgvWork Controls
+    //Initialize AgvWork Controls  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
     if(C_NO_ERR == s16_Error)
     {
         s16_Error += init_elevatorControl(&gt_ui, &gt_elevatorCheckpoints, &gt_elevatorConfig); //Initialize Elevator Control
@@ -108,7 +108,7 @@ int main(void)
         //Run AgvChassis Controls
 
         //Run AgvWork Controls
-        update_elevatorControl();
+        update_elevatorControl();  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
 
         //Outputs
         update_checkpointHandler();
