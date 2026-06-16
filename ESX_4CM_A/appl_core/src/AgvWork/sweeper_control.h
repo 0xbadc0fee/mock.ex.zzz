@@ -34,10 +34,15 @@ typedef struct
         // TODO_SGC sweeper control struct - locals
         uint8 u8_onOffCommand;
         uint8 u8_speedCommand;
-        uint8 u8_speedFeedback;
+        uint8 u8_speedFeedback;  // iffy, FRD doesn't indicate that an encoder signal is available or freq counter
 
         //tx can variables
         // TODO_SGC sweeper control struct - can tx
+        // no current tx in this example, if fictional joystick had LED feedback though
+        // like our old CFBX model, then a TX message could be sent to the joystick when
+        // sweeper drum was on and show up as a red LED on top of the JSL joystick.  Will
+        // leave this for a later exercise though as I no longer have the PGN data for that
+        // kind of message without getting in contact with SureGrip.
 
         //rx can variables
         // TODO_SGC sweeper control struct - can rx
@@ -50,6 +55,7 @@ typedef struct
 
         // control checkpoints
         // TODO_SGC sweeper control struct - checkpoints
+        // Leaving these for later exercise.
 
 }T_SweeperControl;
 
