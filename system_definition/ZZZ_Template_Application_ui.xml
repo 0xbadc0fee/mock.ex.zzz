@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opensyde-system-ui-definition>
+    <file-version>1</file-version>
+    <nodes length="3">
+        <node>node_esx_4cm_a/node_ui.xml</node>
+        <node>node_joystick_j1939/node_ui.xml</node>
+        <node>node_engine/node_ui.xml</node>
+    </nodes>
+    <buses length="1">
+        <bus>
+            <line>
+                <color r="206" g="206" b="217" a="255"/>
+                <width pixels="6"/>
+                <zorder value="3"/>
+                <interaction-points>
+                    <interaction-point x="149" y="251"/>
+                    <interaction-point x="752" y="251"/>
+                </interaction-points>
+            </line>
+            <color-middle-line r="255" g="255" b="255" a="255"/>
+        </bus>
+    </buses>
+    <bus-text-elements length="1">
+        <bus-text-element bus-index="0">
+            <box>
+                <position x="147" y="212"/>
+                <size width="49" height="29"/>
+                <zorder value="2"/>
+            </box>
+            <font-style>Segoe UI,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1</font-style>
+            <font-color>
+                <bright r="57" g="57" b="109" a="255"/>
+                <dark r="255" g="255" b="255" a="255"/>
+            </font-color>
+            <text-content>CAN1</text-content>
+        </bus-text-element>
+    </bus-text-elements>
+    <text-elements/>
+    <boundaries/>
+    <images/>
+    <line-arrows/>
+    <last-known-halc-crcs/>
+</opensyde-system-ui-definition>

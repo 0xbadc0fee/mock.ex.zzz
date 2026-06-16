@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opensyde-comm-ui-definition>
+    <file-version>1</file-version>
+    <com-protocol>
+        <com-message-containers length="4">
+            <com-message-container>
+                <tx-messages length="3">
+                    <com-message use-auto-receive-timeout="true" receive-timeout-disabled="false">
+                        <com-signals length="8">
+                            <com-signal color-index="30"/>
+                            <com-signal color-index="19"/>
+                            <com-signal color-index="57"/>
+                            <com-signal color-index="44"/>
+                            <com-signal color-index="10"/>
+                            <com-signal color-index="15"/>
+                            <com-signal color-index="50"/>
+                            <com-signal color-index="31"/>
+                        </com-signals>
+                    </com-message>
+                    <com-message use-auto-receive-timeout="true" receive-timeout-disabled="false">
+                        <com-signals length="6">
+                            <com-signal color-index="37"/>
+                            <com-signal color-index="54"/>
+                            <com-signal color-index="12"/>
+                            <com-signal color-index="58"/>
+                            <com-signal color-index="20"/>
+                            <com-signal color-index="5"/>
+                        </com-signals>
+                    </com-message>
+                    <com-message use-auto-receive-timeout="true" receive-timeout-disabled="false">
+                        <com-signals length="7">
+                            <com-signal color-index="37"/>
+                            <com-signal color-index="56"/>
+                            <com-signal color-index="45"/>
+                            <com-signal color-index="51"/>
+                            <com-signal color-index="38"/>
+                            <com-signal color-index="42"/>
+                            <com-signal color-index="13"/>
+                        </com-signals>
+                    </com-message>
+                </tx-messages>
+                <rx-messages length="1">
+                    <com-message use-auto-receive-timeout="true" receive-timeout-disabled="true">
+                        <com-signals length="10">
+                            <com-signal color-index="38"/>
+                            <com-signal color-index="41"/>
+                            <com-signal color-index="61"/>
+                            <com-signal color-index="8"/>
+                            <com-signal color-index="7"/>
+                            <com-signal color-index="26"/>
+                            <com-signal color-index="35"/>
+                            <com-signal color-index="46"/>
+                            <com-signal color-index="5"/>
+                            <com-signal color-index="10"/>
+                        </com-signals>
+                    </com-message>
+                </rx-messages>
+            </com-message-container>
+            <com-message-container>
+                <tx-messages length="0"/>
+                <rx-messages length="0"/>
+            </com-message-container>
+            <com-message-container>
+                <tx-messages length="0"/>
+                <rx-messages length="0"/>
+            </com-message-container>
+            <com-message-container>
+                <tx-messages length="0"/>
+                <rx-messages length="0"/>
+            </com-message-container>
+        </com-message-containers>
+    </com-protocol>
+</opensyde-comm-ui-definition>
