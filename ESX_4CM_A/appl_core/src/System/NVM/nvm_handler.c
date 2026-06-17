@@ -34,6 +34,8 @@
 /* -- Module Global Variables -------------------------------------------------------------------------------------- */
 T_Config_Elevator gt_elevatorConfig;    //!<Structure that holds all agVWork - Elevator Control NVM Config
 
+T_Config_Sweeper gt_sweeperConfig;      //!<Structure that holds all agVWork - Sweeper Drum NVM Config
+
 /* -- Implementation  ---------------------------------------------------------------------------------------------- */
 sint16 init_nvmParameters(void)
 {

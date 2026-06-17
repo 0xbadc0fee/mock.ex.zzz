@@ -6,7 +6,7 @@
         <name>Configuration</name>
         <version major="0" minor="0" release="0"/>
         <comment>NVM Datapool to hold Configuration Data</comment>
-        <lists length="1">
+        <lists length="2">
             <list nvm-crc-active="false" nvm-crc="0" nvm-start-address="0" nvm-size="100">
                 <name>ElevatorConfig</name>
                 <comment/>
@@ -41,6 +41,42 @@
                         <name>DEFAULT</name>
                         <comment>Dataset to hold all default values
 </comment>
+                    </data-set>
+                </data-sets>
+            </list>
+            <list nvm-crc-active="false" nvm-crc="0" nvm-start-address="100" nvm-size="100">
+                <name>SweeperConfig</name>
+                <comment/>
+                <data-elements length="2">
+                    <data-element factor="1" offset="0" interpret_as_string="false" nvm-start-address="100">
+                        <name>minRPM</name>
+                        <type base-type="sint16" is-array="false"/>
+                        <comment>Parameter description</comment>
+                        <min-value value="-32768"/>
+                        <max-value value="32767"/>
+                        <unit/>
+                        <access>read-write</access>
+                        <data-set-values>
+                            <data-set-value value="1"/>
+                        </data-set-values>
+                    </data-element>
+                    <data-element factor="1" offset="0" interpret_as_string="false" nvm-start-address="102">
+                        <name>maxRPM</name>
+                        <type base-type="sint16" is-array="false"/>
+                        <comment>Parameter description</comment>
+                        <min-value value="-32768"/>
+                        <max-value value="32767"/>
+                        <unit/>
+                        <access>read-write</access>
+                        <data-set-values>
+                            <data-set-value value="1"/>
+                        </data-set-values>
+                    </data-element>
+                </data-elements>
+                <data-sets>
+                    <data-set>
+                        <name>DEFAULT</name>
+                        <comment/>
                     </data-set>
                 </data-sets>
             </list>

@@ -80,10 +80,14 @@ int main(void)
     // Start openSYDE task
     s16_Error += osy_srv_init();
 
-    //Initialize AgvWork Controls
+    //Initialize AgvWork Controls  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
+//    if(C_NO_ERR == s16_Error)
+//    {
+//        s16_Error += init_elevatorControl(&gt_ui, &gt_elevatorCheckpoints, &gt_elevatorConfig); //Initialize Elevator Control
+//    }
     if(C_NO_ERR == s16_Error)
     {
-        s16_Error += init_elevatorControl(&gt_ui, &gt_elevatorCheckpoints, &gt_elevatorConfig); //Initialize Elevator Control
+        s16_Error += init_sweeperControl(&gt_ui, &gt_sweeperConfig);
     }
 
     // Call this to avoid deadlock in case other cores want to use x_icc_barrier_wait_for()
@@ -92,6 +96,11 @@ int main(void)
     if (s16_Return != C_BUSY)
     {
       s16_Error += s16_Return;
+    }
+
+    if(C_NO_ERR == s16_Error)
+    {
+        s16_Error += init_sweeperControl(&gt_ui, &gt_sweeperConfig); //Initialize Sweeper Drum Control
     }
 
     //add required startup delay here
@@ -108,10 +117,11 @@ int main(void)
         //Run AgvChassis Controls
 
         //Run AgvWork Controls
-        update_elevatorControl();
+//        update_elevatorControl();  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
+        update_sweeperControl();
 
         //Outputs
-        update_checkpointHandler();
+//        update_checkpointHandler();
         update_canOutputs();
         update_hwOutputs();
 

@@ -36,6 +36,33 @@ typedef struct{
 
 }T_JoystickJS6000;
 
+
+//TODO_SGC try to replace the struct below with a union extending the general joystick struct`
+/**
+ * \brief HMI Device Structure - Joystick - JSLX Style
+ *
+ * This structure represents all used variables that are transmitted
+ * to and received from a JSLX Style J1939 Joystick.  See Mock_SDLC_BRD doc.
+ *
+ */
+typedef struct{
+
+        uint8 u8_joystickActive;
+
+        // Main Grip Axis
+        sint16 s16yPos;     //!< Y.3-X.2 Grip Y-Axis POS of Joystick
+
+        // Joystick Top Panel
+        uint8 u8_b1_state;  //!< Y.0-X.0 Button
+        uint8 u8_b2_state;  //!< Y.0-X.1-P.1 RTC Rocker Pos 1
+        uint8 u8_b3_state;  //!< Y.0-X.1-P.2 RTC Rocker Pos 2
+        sint16 s16xPos;     //!< Y.0-X.3 Slider X-Axis
+        uint8 u8_b4_state;  //!< Y.1-X.1 Button
+        uint8 u8_b5_state;  //!< Y.1-X.3 Button
+        uint8 u8_b6_state;  //!< Y.2-X.2 Button
+
+}T_JoystickJSLX;
+
 /* -- Global Variables ---------------------------------------------------------------------------------------------- */
 /* -- Function Prototypes ------------------------------------------------------------------------------------------- */
 
