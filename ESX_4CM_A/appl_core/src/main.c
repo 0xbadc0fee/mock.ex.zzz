@@ -85,6 +85,10 @@ int main(void)
     {
         s16_Error += init_elevatorControl(&gt_ui, &gt_elevatorCheckpoints, &gt_elevatorConfig); //Initialize Elevator Control
     }
+    if(C_NO_ERR == s16_Error)
+    {
+        s16_Error += init_sweeperControl(&gt_ui, &gt_sweeperConfig);
+    }
 
     // Call this to avoid deadlock in case other cores want to use x_icc_barrier_wait_for()
     // NOTE: this must be placed after creating tasks which will use barriers
