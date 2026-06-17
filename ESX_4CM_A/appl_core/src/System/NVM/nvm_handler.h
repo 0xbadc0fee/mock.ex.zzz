@@ -22,12 +22,14 @@
 
 #include "elevator_control.h"
 #include "sweeper_control.h"
+#include "boom_control.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 /* -- Types --------------------------------------------------------------------------------------------------------- */
 /* -- Global Variables ---------------------------------------------------------------------------------------------- */
 extern T_Config_Elevator gt_elevatorConfig;
 extern T_Config_Sweeper gt_sweeperConfig;
+extern T_Config_Boom gt_boomConfig;
 
 /* -- Function Prototypes ------------------------------------------------------------------------------------------- */
 sint16 init_nvmParameters(void);

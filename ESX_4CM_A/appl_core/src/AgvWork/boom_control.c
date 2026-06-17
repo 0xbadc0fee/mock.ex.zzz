@@ -1,9 +1,10 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 /*
- * sweeper_control.c
+ * \file            boom_control.c
+ * \brief           <description>
  *
- *  Created on: Jun 16, 2026
+ *  Created on: Jun 17, 2026
  *      Author: silas.curfman
  */
 
@@ -11,72 +12,55 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 /* -- Includes ------------------------------------------------------------------------------------------------------ */
-#include "sweeper_control.h"
+#include "boom_control.h"
 #include "stwerrors.h"
 #include "stwtypes.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 /* -- Types --------------------------------------------------------------------------------------------------------- */
-
 /* -- Global Variables ---------------------------------------------------------------------------------------------- */
-
-// Definition of application heap
-
-// Global variables for main task configuration
-
-
 /* -- Module Global Variables --------------------------------------------------------------------------------------- */
-static T_SweeperControl mt_sweeper;
+static T_BoomControl mt_boom;
 
 /* -- Module Global Function Prototypes ----------------------------------------------------------------------------- */
 
 /* -- Implementation ------------------------------------------------------------------------------------------------ */
 
 /**
- * \brief Initialize AgvWork - Sweeper Control
+ * \brief  Initialize AgvWork - Boom Control
  *
- * This function initializes the AgvWork - Sweeper Control Logic.
- *
- * \param _nvmSweeper
+ * \param _ui
+ * \param _nvmBoom
  *
  * \return s16_Error Error Code
  * \retval C_NO_ERR Function Executed Properly
  */
-sint16 init_sweeperControl(T_UserInterface *_ui, T_Config_Sweeper *_nvmSweeper)
+sint16 init_boomControl(T_UserInterface *_ui, T_Config_Boom *_nvmBoom)
 {
-
     sint16 s16_error = C_NO_ERR;
 
-    //populate local copy of RX HMI elements
-    mt_sweeper.pu8_onOffCommand = &_ui->t_joystick.u8_b1_state;
-    mt_sweeper.ps16_requestedSpeed = &_ui->t_joystickJSLX.s16xPos;
+    // populate local copy of
+    mt_boom.pu8_liftCommand = &_ui->t_joystickJSLX.u8_b2_state;
+    mt_boom.pu8_lowerCommand = &_ui->t_joystickJSLX.u8_b3_state;
 
-    //populate local copy of NVM params
-    mt_sweeper.pt_nvmSweeper = _nvmSweeper;
-
-    return s16_error;
-
-}
-
-/**
- * \brief Update AgvWork - Sweeper Control
- *
- * Primary run logic for rotary sweeper.  When permissible, run sweeper at requested speed.
- *
- * Safe operation defined by operator presence, and min - max rotation speed.
- *
- * \return s16_error Error Code
- * \retval C_NO_ERR Function Executed Properly
- */
-sint16 update_sweeperControl(void)
-{
-
-    sint16 s16_error = C_NO_ERR;
-
-    // TODO-SGC get inputs joystick
-    // TODO-SGC get inputs chassis / operator presence
-    // TODO-SGC run sweeper at desired speed until shut off
+    // populate local NVM config
+    mt_boom.pt_nvmBoom = _nvmBoom;   //!< Boom config flags, invert rocker
 
     return s16_error;
 }
 
+
+sint16 update_boomControl(void)
+{
+    sint16 s16_error = C_NO_ERR;
+
+    // TODO_SGC get joystick inputs
+    // TODO_SGC get inputs chassis / operator presence / boom limit switches
+    // TODO_SGC check for axis invert flag if need to swap rocker lift/lower
+    // TODO_SGC operate boom lift lower between MIN & MAX limit switch range
+
+    return s16_error;
+}
+
+
+//EOF

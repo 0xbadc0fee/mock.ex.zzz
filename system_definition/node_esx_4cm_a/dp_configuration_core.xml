@@ -6,7 +6,7 @@
         <name>Configuration</name>
         <version major="0" minor="0" release="0"/>
         <comment>NVM Datapool to hold Configuration Data</comment>
-        <lists length="2">
+        <lists length="3">
             <list nvm-crc-active="false" nvm-crc="0" nvm-start-address="0" nvm-size="100">
                 <name>ElevatorConfig</name>
                 <comment/>
@@ -70,6 +70,30 @@
                         <access>read-write</access>
                         <data-set-values>
                             <data-set-value value="1"/>
+                        </data-set-values>
+                    </data-element>
+                </data-elements>
+                <data-sets>
+                    <data-set>
+                        <name>DEFAULT</name>
+                        <comment/>
+                    </data-set>
+                </data-sets>
+            </list>
+            <list nvm-crc-active="false" nvm-crc="0" nvm-start-address="200" nvm-size="100">
+                <name>BoomConfig</name>
+                <comment/>
+                <data-elements length="1">
+                    <data-element factor="1" offset="0" interpret_as_string="false" nvm-start-address="200">
+                        <name>invertRocker</name>
+                        <type base-type="uint8" is-array="false"/>
+                        <comment>Parameter description</comment>
+                        <min-value value="0"/>
+                        <max-value value="1"/>
+                        <unit/>
+                        <access>read-write</access>
+                        <data-set-values>
+                            <data-set-value value="0"/>
                         </data-set-values>
                     </data-element>
                 </data-elements>

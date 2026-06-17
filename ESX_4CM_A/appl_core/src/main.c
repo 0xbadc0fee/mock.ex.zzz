@@ -88,6 +88,7 @@ int main(void)
     if(C_NO_ERR == s16_Error)
     {
         s16_Error += init_sweeperControl(&gt_ui, &gt_sweeperConfig);
+        s16_Error += init_boomControl(&gt_ui, &gt_boomConfig);
     }
 
     // Call this to avoid deadlock in case other cores want to use x_icc_barrier_wait_for()
@@ -119,6 +120,7 @@ int main(void)
         //Run AgvWork Controls
 //        update_elevatorControl();  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
         update_sweeperControl();
+        update_boomControl();
 
         //Outputs
 //        update_checkpointHandler();

@@ -17,11 +17,11 @@
 ///check for correct version of structure definitions
 #if OSY_DPA_DATA_POOL_DEFINITION_VERSION != 0x0004U
 ///if compilation fails here the openSYDE library version does not match the version of the generated code
-static T_osy_non_existing_type_2727616192 mt_Variable;
+static T_osy_non_existing_type_4215645038 mt_Variable;
 #endif
 
 ///ensure file consistency (if compilation fails here the .h file does not match this .c file)
-CONFIGURATION_PROJECT_ID_2727616192
+CONFIGURATION_PROJECT_ID_4215645038
 
 /* -- Types --------------------------------------------------------------------------------------------------------- */
 
@@ -91,6 +91,32 @@ static const T_osy_dpa_data_set mat_SweeperConfigDataSetTable[CONFIGURATION_SWEE
    { &mat_SweeperConfigDataSetValues[0] }
 };
 
+///Minimum values
+static const T_Configuration_BoomConfig_Values mt_BoomConfigMinValues =
+{
+   0U    ///< invertRocker (Parameter description)
+};
+
+///Maximum values
+static const T_Configuration_BoomConfig_Values mt_BoomConfigMaxValues =
+{
+   1U    ///< invertRocker (Parameter description)
+};
+
+///Dataset values
+static const T_Configuration_BoomConfig_Values mat_BoomConfigDataSetValues [CONFIGURATION_BOOMCONFIG_NUMBER_OF_DATA_SETS] =
+{
+   {
+      0U    ///< invertRocker (Parameter description)
+   }
+};
+
+///Dataset table:
+static const T_osy_dpa_data_set mat_BoomConfigDataSetTable[CONFIGURATION_BOOMCONFIG_NUMBER_OF_DATA_SETS] =
+{
+   { &mat_BoomConfigDataSetValues[0] }
+};
+
 ///List definitions:
 static const T_osy_dpa_element_definition mat_DataPoolElevatorConfigElements[CONFIGURATION_ELEVATORCONFIG_NUMBER_OF_ELEMENTS] =
 {
@@ -104,11 +130,17 @@ static const T_osy_dpa_element_definition mat_DataPoolSweeperConfigElements[CONF
    { OSY_DPA_ELEMENT_TYPE_SINT16, 0U, 2U, &gt_Configuration_DataPoolValues.t_SweeperConfigValues.s16_maxRPM, &mt_SweeperConfigMinValues.s16_maxRPM, &mt_SweeperConfigMaxValues.s16_maxRPM }
 };
 
+static const T_osy_dpa_element_definition mat_DataPoolBoomConfigElements[CONFIGURATION_BOOMCONFIG_NUMBER_OF_ELEMENTS] =
+{
+   { OSY_DPA_ELEMENT_TYPE_UINT8, 0U, 1U, &gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertRocker, &mt_BoomConfigMinValues.u8_invertRocker, &mt_BoomConfigMaxValues.u8_invertRocker }
+};
+
 ///list of lists:
 static const T_osy_dpa_list_definition mat_DataPoolLists[CONFIGURATION_NUMBER_OF_LISTS] =
 {
    { CONFIGURATION_ELEVATORCONFIG_NUMBER_OF_ELEMENTS, CONFIGURATION_ELEVATORCONFIG_NUMBER_OF_DATA_SETS, 0U, 0x00000000U, sizeof(T_Configuration_ElevatorConfig_Values), &mat_DataPoolElevatorConfigElements[0], &gt_Configuration_DataPoolValues.t_ElevatorConfigValues, &mat_ElevatorConfigDataSetTable[0] },
-   { CONFIGURATION_SWEEPERCONFIG_NUMBER_OF_ELEMENTS, CONFIGURATION_SWEEPERCONFIG_NUMBER_OF_DATA_SETS, 0U, 0x00000064U, sizeof(T_Configuration_SweeperConfig_Values), &mat_DataPoolSweeperConfigElements[0], &gt_Configuration_DataPoolValues.t_SweeperConfigValues, &mat_SweeperConfigDataSetTable[0] }
+   { CONFIGURATION_SWEEPERCONFIG_NUMBER_OF_ELEMENTS, CONFIGURATION_SWEEPERCONFIG_NUMBER_OF_DATA_SETS, 0U, 0x00000064U, sizeof(T_Configuration_SweeperConfig_Values), &mat_DataPoolSweeperConfigElements[0], &gt_Configuration_DataPoolValues.t_SweeperConfigValues, &mat_SweeperConfigDataSetTable[0] },
+   { CONFIGURATION_BOOMCONFIG_NUMBER_OF_ELEMENTS, CONFIGURATION_BOOMCONFIG_NUMBER_OF_DATA_SETS, 0U, 0x000000c8U, sizeof(T_Configuration_BoomConfig_Values), &mat_DataPoolBoomConfigElements[0], &gt_Configuration_DataPoolValues.t_BoomConfigValues, &mat_BoomConfigDataSetTable[0] }
 };
 
 ///Datapool definition:
@@ -119,7 +151,7 @@ static const T_osy_dpa_data_pool_definition mt_DataPoolDefinition =
    { 0x00U, 0x00U, 0x00U }, ///< Datapool definition version V0.0r0
    "Configuration",  ///< name of Datapool
    CONFIGURATION_NUMBER_OF_LISTS,
-   0xf1aaf5c1U, ///< CRC of Datapool definition
+   0xf46197adU, ///< CRC of Datapool definition
    0x00000000U,  ///< NVM start address
    20000U,  ///< number of bytes occupied in NVM
    &mat_DataPoolLists[0],
