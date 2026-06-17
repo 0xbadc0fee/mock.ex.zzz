@@ -81,10 +81,10 @@ int main(void)
     s16_Error += osy_srv_init();
 
     //Initialize AgvWork Controls  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
-    if(C_NO_ERR == s16_Error)
-    {
-        s16_Error += init_elevatorControl(&gt_ui, &gt_elevatorCheckpoints, &gt_elevatorConfig); //Initialize Elevator Control
-    }
+//    if(C_NO_ERR == s16_Error)
+//    {
+//        s16_Error += init_elevatorControl(&gt_ui, &gt_elevatorCheckpoints, &gt_elevatorConfig); //Initialize Elevator Control
+//    }
     if(C_NO_ERR == s16_Error)
     {
         s16_Error += init_sweeperControl(&gt_ui, &gt_sweeperConfig);
@@ -117,11 +117,11 @@ int main(void)
         //Run AgvChassis Controls
 
         //Run AgvWork Controls
-        update_elevatorControl();  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
+//        update_elevatorControl();  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
         update_sweeperControl();
 
         //Outputs
-        update_checkpointHandler();
+//        update_checkpointHandler();
         update_canOutputs();
         update_hwOutputs();
 
