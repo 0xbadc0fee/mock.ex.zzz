@@ -14,6 +14,7 @@
 
 /* -- Includes ------------------------------------------------------------------------------------------------------ */
 #include "stwtypes.h"
+#include "hmi_definition.h"
 
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
@@ -33,8 +34,8 @@ typedef struct
         //local control variables
         // TODO_SGC sweeper control struct - locals
         uint8 u8_onOffCommand;
-        uint8 u8_speedCommand;
-        uint8 u8_speedFeedback;  // iffy, FRD doesn't indicate that an encoder signal is available or freq counter
+        sint16 s16_speedCommand;
+        sint16 s16_speedFeedback;  // iffy, FRD doesn't indicate that an encoder signal is available or freq counter
 
         //tx can variables
         // TODO_SGC sweeper control struct - can tx
@@ -46,7 +47,7 @@ typedef struct
 
         //rx can variables
         // TODO_SGC sweeper control struct - can rx
-        uint8 *pu8_requestedSpeed;  //!<Sweeper requested speed from joystick
+        sint16 *ps16_requestedSpeed;  //!<Sweeper requested speed from joystick
         uint8 *pu8_onOffCommand;    //!<Sweeper On/Off command from joystick
 
         //nvm configuration parameters
@@ -61,11 +62,10 @@ typedef struct
 
 
 /* -- Global Variables ---------------------------------------------------------------------------------------------- */
-sint16 init_sweeperControl();
-sint16 update_sweeperControl();
+
 
 /* -- Function Prototypes ------------------------------------------------------------------------------------------- */
-sint16 init_sweeperControl(T_Config_Sweeper *_nvmSweeper);
+sint16 init_sweeperControl(T_UserInterface *_ui, T_Config_Sweeper *_nvmSweeper);
 sint16 update_sweeperControl(void);
 
 

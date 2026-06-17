@@ -42,10 +42,14 @@ static T_SweeperControl mt_sweeper;
  * \return s16_Error Error Code
  * \retval C_NO_ERR Function Executed Properly
  */
-sint16 init_sweeperControl(T_Config_Sweeper *_nvmSweeper)
+sint16 init_sweeperControl(T_UserInterface *_ui, T_Config_Sweeper *_nvmSweeper)
 {
 
     sint16 s16_error = C_NO_ERR;
+
+    //populate local copy of RX HMI elements
+    mt_sweeper.pu8_onOffCommand = &_ui->t_joystick.u8_b1_state;
+    mt_sweeper.ps16_requestedSpeed = &_ui->t_joystickJSLX.s16xPos;
 
     //populate local copy of NVM params
     mt_sweeper.pt_nvmSweeper = _nvmSweeper;

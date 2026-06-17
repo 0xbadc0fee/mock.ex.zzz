@@ -94,6 +94,11 @@ int main(void)
       s16_Error += s16_Return;
     }
 
+    if(C_NO_ERR == s16_Error)
+    {
+        s16_Error += init_sweeperControl(&gt_ui, &gt_sweeperConfig); //Initialize Sweeper Drum Control
+    }
+
     //add required startup delay here
 
     do
