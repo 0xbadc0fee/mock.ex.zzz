@@ -19,7 +19,7 @@ extern "C" {
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 ///unique ID to ensure consistency between .h and .c files
-#define CONFIGURATION_PROJECT_ID_3919460662 void configuration_project_id_3919460662(void) {}
+#define CONFIGURATION_PROJECT_ID_2727616192 void configuration_project_id_2727616192(void) {}
 
 ///Index of this Datapool
 #define CONFIGURATION_DATA_POOL_INDEX (1U)
@@ -62,10 +62,10 @@ extern "C" {
 #define CONFIGURATION_SET_VALUE_FROM_SCALED_ELEVATORCONFIG_MAXSPEED(SCALED_VALUE) (gt_Configuration_DataPoolValues.t_ElevatorConfigValues.u8_maxSpeed = (SCALED_VALUE - CONFIGURATION_SCALING_OFFSET_ELEVATORCONFIG_MAXSPEED) / CONFIGURATION_SCALING_FACTOR_ELEVATORCONFIG_MAXSPEED)
 #define CONFIGURATION_GET_SCALED_VALUE_ELEVATORCONFIG_MAXSPEED() ((gt_Configuration_DataPoolValues.t_ElevatorConfigValues.u8_maxSpeed * CONFIGURATION_SCALING_FACTOR_ELEVATORCONFIG_MAXSPEED) + CONFIGURATION_SCALING_OFFSET_ELEVATORCONFIG_MAXSPEED)
 
-#define CONFIGURATION_SET_VALUE_FROM_SCALED_SWEEPERCONFIG_MINRPM(SCALED_VALUE) (gt_Configuration_DataPoolValues.t_SweeperConfigValues.u8_minRPM = (SCALED_VALUE - CONFIGURATION_SCALING_OFFSET_SWEEPERCONFIG_MINRPM) / CONFIGURATION_SCALING_FACTOR_SWEEPERCONFIG_MINRPM)
-#define CONFIGURATION_GET_SCALED_VALUE_SWEEPERCONFIG_MINRPM() ((gt_Configuration_DataPoolValues.t_SweeperConfigValues.u8_minRPM * CONFIGURATION_SCALING_FACTOR_SWEEPERCONFIG_MINRPM) + CONFIGURATION_SCALING_OFFSET_SWEEPERCONFIG_MINRPM)
-#define CONFIGURATION_SET_VALUE_FROM_SCALED_SWEEPERCONFIG_MAXRPM(SCALED_VALUE) (gt_Configuration_DataPoolValues.t_SweeperConfigValues.u8_maxRPM = (SCALED_VALUE - CONFIGURATION_SCALING_OFFSET_SWEEPERCONFIG_MAXRPM) / CONFIGURATION_SCALING_FACTOR_SWEEPERCONFIG_MAXRPM)
-#define CONFIGURATION_GET_SCALED_VALUE_SWEEPERCONFIG_MAXRPM() ((gt_Configuration_DataPoolValues.t_SweeperConfigValues.u8_maxRPM * CONFIGURATION_SCALING_FACTOR_SWEEPERCONFIG_MAXRPM) + CONFIGURATION_SCALING_OFFSET_SWEEPERCONFIG_MAXRPM)
+#define CONFIGURATION_SET_VALUE_FROM_SCALED_SWEEPERCONFIG_MINRPM(SCALED_VALUE) (gt_Configuration_DataPoolValues.t_SweeperConfigValues.s16_minRPM = (SCALED_VALUE - CONFIGURATION_SCALING_OFFSET_SWEEPERCONFIG_MINRPM) / CONFIGURATION_SCALING_FACTOR_SWEEPERCONFIG_MINRPM)
+#define CONFIGURATION_GET_SCALED_VALUE_SWEEPERCONFIG_MINRPM() ((gt_Configuration_DataPoolValues.t_SweeperConfigValues.s16_minRPM * CONFIGURATION_SCALING_FACTOR_SWEEPERCONFIG_MINRPM) + CONFIGURATION_SCALING_OFFSET_SWEEPERCONFIG_MINRPM)
+#define CONFIGURATION_SET_VALUE_FROM_SCALED_SWEEPERCONFIG_MAXRPM(SCALED_VALUE) (gt_Configuration_DataPoolValues.t_SweeperConfigValues.s16_maxRPM = (SCALED_VALUE - CONFIGURATION_SCALING_OFFSET_SWEEPERCONFIG_MAXRPM) / CONFIGURATION_SCALING_FACTOR_SWEEPERCONFIG_MAXRPM)
+#define CONFIGURATION_GET_SCALED_VALUE_SWEEPERCONFIG_MAXRPM() ((gt_Configuration_DataPoolValues.t_SweeperConfigValues.s16_maxRPM * CONFIGURATION_SCALING_FACTOR_SWEEPERCONFIG_MAXRPM) + CONFIGURATION_SCALING_OFFSET_SWEEPERCONFIG_MAXRPM)
 
 /* -- Types --------------------------------------------------------------------------------------------------------- */
 ///Elements in list "ElevatorConfig":
@@ -78,8 +78,8 @@ typedef struct
 ///Elements in list "SweeperConfig":
 typedef struct
 {
-   uint8 u8_minRPM; /* Parameter description */
-   uint8 u8_maxRPM; /* Parameter description */
+   sint16 s16_minRPM; /* Parameter description */
+   sint16 s16_maxRPM; /* Parameter description */
 } T_Configuration_SweeperConfig_Values;
 
 ///Elements of all lists:
@@ -98,7 +98,7 @@ extern const T_osy_dpa_data_pool gt_Configuration_DataPool;
 
 /* -- Function Prototypes ------------------------------------------------------------------------------------------- */
 ///unique ID to ensure consistency between .h and .c files
-extern void configuration_project_id_3919460662(void);
+extern void configuration_project_id_2727616192(void);
 
 /* -- Implementation ------------------------------------------------------------------------------------------------ */
 #ifdef __cplusplus

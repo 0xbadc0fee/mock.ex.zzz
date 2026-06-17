@@ -118,6 +118,7 @@ int main(void)
 
         //Run AgvWork Controls
         update_elevatorControl();  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
+        update_sweeperControl();
 
         //Outputs
         update_checkpointHandler();

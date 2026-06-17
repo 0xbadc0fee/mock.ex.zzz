@@ -9,3 +9,7 @@
 /* Elevator Control Parameters */
 NVM_FIELD(elevatorMinSpeed, CONFIGURATION_LIST_INDEX_ELEVATORCONFIG, gt_Configuration_DataPoolValues.t_ElevatorConfigValues.u8_minSpeed, gt_elevatorConfig.u8_minSpeed)
 NVM_FIELD(elevatorMaxSpeed, CONFIGURATION_LIST_INDEX_ELEVATORCONFIG, gt_Configuration_DataPoolValues.t_ElevatorConfigValues.u8_maxSpeed, gt_elevatorConfig.u8_maxSpeed)
+
+/* Sweeper Control Parameters */
+NVM_FIELD(sweeperMinRPM, CONFIGURATION_ELEM_INDEX_SWEEPERCONFIG_MINRPM, gt_Configuration_DataPoolValues.t_SweeperConfigValues.s16_minRPM, gt_sweeperConfig.s16_minRPM)
+NVM_FIELD(sweeperMaxRPM, CONFIGURATION_ELEM_INDEX_SWEEPERCONFIG_MAXRPM, gt_Configuration_DataPoolValues.t_SweeperConfigValues.s16_maxRPM, gt_sweeperConfig.s16_maxRPM)

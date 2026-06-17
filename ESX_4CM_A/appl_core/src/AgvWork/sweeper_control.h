@@ -24,8 +24,8 @@
 /* -- Types --------------------------------------------------------------------------------------------------------- */
 typedef struct
 {
-        uint8 u8_minSpeed;
-        uint8 u8_maxSpeed;
+        sint16 s16_minRPM;
+        sint16 s16_maxRPM;
 
 }T_Config_Sweeper;
 
