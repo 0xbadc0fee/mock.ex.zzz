@@ -15,7 +15,7 @@
 #include "osy_srv.h"
 
 #include "STW_4CM_HAL/system.h"
-#include "can_handler_lib.h"
+#include "can_dp_bridge.h"
 
 #include "hw_inputs.h"
 #include "hw_outputs.h"

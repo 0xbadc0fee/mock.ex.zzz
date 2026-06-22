@@ -18,7 +18,7 @@
 #include "x_icc_barrier.h"
 #include "x_os.h"
 #include "osy_app_j1939.h"
-#include "can_handler_lib.h"
+#include "can_dp_bridge.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 #define APPLICATION_NAME      "ESX-4CM-A openSYDE Server"
