@@ -44,6 +44,32 @@ T_VehicleInput throttlePosition =
             .s32_diagMax            = 4500,
         };
 
+T_VehicleInput tvi_boom_limit_1 =
+{
+    .Name_Description        = "BOOM_LIMIT_1",
+    .u16_hardwareID         = X_IN_IACV_1,
+    .e_inputType            = IT_DIGITAL,
+    .e_circuit              = INPUT_CIRCUIT_NONE,
+    .u16_debounce           = DEFAULT_DIG_DEBOUNCE,
+    .f32_inputValue         = FALSE,
+    .f32_prevInputValue     = FALSE,
+    .mq_inputChanged        = TRUE,
+    .u8_diagEnabled         = FALSE,
+};
+
+T_VehicleInput tvi_boom_limit_2 =
+{
+    .Name_Description        = "BOOM_LIMIT_2",
+    .u16_hardwareID         = X_IN_IACV_2,
+    .e_inputType            = IT_DIGITAL,
+    .e_circuit              = INPUT_CIRCUIT_NONE,
+    .u16_debounce           = DEFAULT_DIG_DEBOUNCE,
+    .f32_inputValue         = FALSE,
+    .f32_prevInputValue     = FALSE,
+    .mq_inputChanged        = TRUE,
+    .u8_diagEnabled         = FALSE,
+};
+
 
 /* -- Implementation  ---------------------------------------------------------------------------------------------- */
 /** \brief Initialize Hardware Inputs
