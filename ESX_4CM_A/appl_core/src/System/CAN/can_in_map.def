@@ -6,6 +6,6 @@
 * SRC_VALUE: expression that yields the value to assign (from datapool)
 */
 
-/* Boom Lift - Lower */
-DP2CNTRL(foo, gt_can_devs.t_joystickJSLX.u8_b3_state, gt_J1939_DataPoolValues.t_CAN1_RXValues.u8_BJM1_Joystick1Button2PressedStatus)
-DP2CNTRL(bar, gt_can_devs.t_joystickJSLX.u8_b2_state, gt_J1939_DataPoolValues.t_CAN1_RXValues.u8_BJM1_Joystick1Button3PressedStatus)
+/* Boom Lift-Lower CAN Signals*/
+DP2CNTRL(boomLift,      gt_can_devs.t_joystickJSLX.u8_b3_state,     gt_J1939_DataPoolValues.t_CAN1_RXValues.u8_BJM1_Joystick1Button2PressedStatus)
+DP2CNTRL(boomLower,     gt_can_devs.t_joystickJSLX.u8_b2_state,     gt_J1939_DataPoolValues.t_CAN1_RXValues.u8_BJM1_Joystick1Button3PressedStatus)

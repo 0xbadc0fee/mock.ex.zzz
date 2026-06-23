@@ -65,7 +65,7 @@ sint16 update_boomControl(void)
 
     // TODO_SGC get joystick inputs
     // TODO_SGC get inputs chassis / operator presence / boom limit switches
-    // TODO_SGC check for axis invert flag if need to swap rocker lift/lower
+    // TODO_SGC check for axis invert flag if need to swap rocker lift & lower buttons
     // TODO_SGC operate boom lift lower between MIN & MAX limit switch range
 
     return s16_error;

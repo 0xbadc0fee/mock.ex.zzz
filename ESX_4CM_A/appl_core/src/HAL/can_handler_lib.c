@@ -25,7 +25,7 @@
 //APPLICATION - ZZZ Mock Controller
 #include "can_device_definition.h"
 #include "j1939_data_pool.h"
-
+#include "can_handler_lib.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 /* -- Types --------------------------------------------------------------------------------------------------------- */
@@ -105,7 +105,7 @@ sint16 update_canOutputs(void)
     (void)osy_dph_lock_data_pool(J1939_DATA_POOL_INDEX);
 
     #define CNTRL2DP(name, CNTRL_VALUE, DPL_VALUE) VAR_ASSIGN((DPL_VALUE), (CNTRL_VALUE));
-    //#include "can_out_map.def"
+    #include "can_out_map.def"
     #undef CNTRL2DP
 
     (void)osy_dph_unlock_data_pool(J1939_DATA_POOL_INDEX);
