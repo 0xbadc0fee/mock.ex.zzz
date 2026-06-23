@@ -13,6 +13,7 @@
 #define APPL_CORE_SRC_AGVWORK_BOOM_CONTROL_H_
 
 /* -- Includes ------------------------------------------------------------------------------------------------------ */
+#include "can_device_definition.h"
 #include "stwtypes.h"
 #include "hmi_definition.h"
 
@@ -59,7 +60,7 @@ typedef struct
 
 
 /* -- Function Prototypes ------------------------------------------------------------------------------------------- */
-sint16 init_boomControl(T_UserInterface *_ui, T_Config_Boom *_nvmBoom);
+sint16 init_boomControl(T_CANDevices *_can_dev, T_Config_Boom *_nvmBoom);
 sint16 update_boomControl(void);
 
 

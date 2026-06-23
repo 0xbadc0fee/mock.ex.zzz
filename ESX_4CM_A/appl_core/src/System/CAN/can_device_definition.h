@@ -26,7 +26,7 @@
 typedef struct
 {
         //UI Devices
-        T_JoystickJSLX  t_joystick;
+        T_JoystickJSLX  t_joystickJSLX;
 
         //Engine
         T_Engine        t_engine;

@@ -13,7 +13,12 @@
 #define CAN_INIT_H_
 
 /* -- Includes ------------------------------------------------------------------------------------------------------ */
+#include "stwtypes.h"
+#include <stdbool.h>
+
 #include "can_device_definition.h"
+#include "j1939_data_pool.h"
+
 #include "SPN_Definitions.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */

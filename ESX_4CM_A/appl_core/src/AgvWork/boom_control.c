@@ -12,6 +12,15 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 /* -- Includes ------------------------------------------------------------------------------------------------------ */
+//STD
+#include <stdint.h>
+#include "x_stdtypes.h"
+
+//STW
+#include "stwerrors.h"
+#include "stwtypes.h"
+
+//PROJECT
 #include "boom_control.h"
 #include "stwerrors.h"
 #include "stwtypes.h"
@@ -35,13 +44,13 @@ static T_BoomControl mt_boom;
  * \return s16_Error Error Code
  * \retval C_NO_ERR Function Executed Properly
  */
-sint16 init_boomControl(T_UserInterface *_ui, T_Config_Boom *_nvmBoom)
+sint16 init_boomControl(T_CANDevices *_can_dev, T_Config_Boom *_nvmBoom)
 {
     sint16 s16_error = C_NO_ERR;
 
     // populate local copy of
-    mt_boom.pu8_liftCommand = &_ui->t_joystickJSLX.u8_b2_state;
-    mt_boom.pu8_lowerCommand = &_ui->t_joystickJSLX.u8_b3_state;
+    mt_boom.pu8_liftCommand = &_can_dev->t_joystickJSLX.u8_b2_state;
+    mt_boom.pu8_lowerCommand = &_can_dev->t_joystickJSLX.u8_b3_state;
 
     // populate local NVM config
     mt_boom.pt_nvmBoom = _nvmBoom;   //!< Boom config flags, invert rocker

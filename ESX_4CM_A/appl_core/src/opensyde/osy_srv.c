@@ -12,13 +12,12 @@
 #include "osy_dpd_driver.h"
 #include "osy_srv.h"
 #include "osy_init.h"
-//#include "can_handler.h"
+#include "can_handler_lib.h"
 #include "x_sys.h"
 #include "x_sys_rst.h"
 #include "x_icc_barrier.h"
 #include "x_os.h"
 #include "osy_app_j1939.h"
-#include "can_dp_bridge.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 #define APPLICATION_NAME      "ESX-4CM-A openSYDE Server"
