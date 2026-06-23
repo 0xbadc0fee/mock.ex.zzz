@@ -89,7 +89,7 @@ sint16 update_canInputs(void)
     (void)osy_dph_lock_data_pool(J1939_DATA_POOL_INDEX);
 
     #define DP2CNTRL(name, CNTRL_VALUE, DPL_VALUE) VAR_ASSIGN((CNTRL_VALUE), (DPL_VALUE));
-    #include "can_in_map.def"
+    #include "can_in_map.def"  //FIXME undefined reference to 'VAR_ASSSIGN'
     #undef DP2CNTRL
 
     (void)osy_dph_unlock_data_pool(J1939_DATA_POOL_INDEX);
