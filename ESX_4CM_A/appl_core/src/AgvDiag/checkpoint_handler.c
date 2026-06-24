@@ -40,7 +40,7 @@ sint16 update_checkpointHandler(void)
     //TODO_STW - Safe Datapool Lock
 
     //Expand out the Checkpoint Mapping File
-    #define CNTRL2DP(name, DP_LVALUE, SRC_RVALUE) DP_ASSIGN((DP_LVALUE), (SRC_RVALUE));
+    #define CNTRL2DP(name, DP_LVALUE, SRC_RVALUE) VAR_ASSIGN((DP_LVALUE), (SRC_RVALUE));
     #include "checkpoint_map.def"
     #undef CNTRL2DP
 

@@ -21,7 +21,7 @@
 
 #include "checkpoint_handler.h"
 #include "hmi_definition.h"
-#include "can_handler.h"
+#include "can_handler_lib.h"
 #include "nvm_handler.h"
 
 #include "ethernet_init.h"
@@ -87,8 +87,8 @@ int main(void)
 //    }
     if(C_NO_ERR == s16_Error)
     {
-        s16_Error += init_sweeperControl(&gt_ui, &gt_sweeperConfig);
-        s16_Error += init_boomControl(&gt_ui, &gt_boomConfig);
+        s16_Error += init_sweeperControl(&gt_can_devs, &gt_sweeperConfig);
+        s16_Error += init_boomControl(&gt_can_devs, &gt_boomConfig);
     }
 
     // Call this to avoid deadlock in case other cores want to use x_icc_barrier_wait_for()
@@ -101,7 +101,7 @@ int main(void)
 
     if(C_NO_ERR == s16_Error)
     {
-        s16_Error += init_sweeperControl(&gt_ui, &gt_sweeperConfig); //Initialize Sweeper Drum Control
+        s16_Error += init_sweeperControl(&gt_can_devs, &gt_sweeperConfig); //Initialize Sweeper Drum Control
     }
 
     //add required startup delay here

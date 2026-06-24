@@ -19,7 +19,7 @@ extern "C" {
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 ///unique ID to ensure consistency between .h and .c files
-#define CONFIGURATION_PROJECT_ID_4215645038 void configuration_project_id_4215645038(void) {}
+#define CONFIGURATION_PROJECT_ID_3275637144 void configuration_project_id_3275637144(void) {}
 
 ///Index of this Datapool
 #define CONFIGURATION_DATA_POOL_INDEX (1U)
@@ -40,7 +40,8 @@ extern "C" {
 #define CONFIGURATION_SWEEPERCONFIG_NUMBER_OF_ELEMENTS (2U)
 
 #define CONFIGURATION_ELEM_INDEX_BOOMCONFIG_INVERTROCKER (0U)
-#define CONFIGURATION_BOOMCONFIG_NUMBER_OF_ELEMENTS (1U)
+#define CONFIGURATION_ELEM_INDEX_BOOMCONFIG_INVERTLIMITSWITCHPOS (1U)
+#define CONFIGURATION_BOOMCONFIG_NUMBER_OF_ELEMENTS (2U)
 
 ///Index of Datasets
 #define CONFIGURATION_DATA_SET_INDEX_ELEVATORCONFIG_DEFAULT (0U)
@@ -65,6 +66,8 @@ extern "C" {
 
 #define CONFIGURATION_SCALING_FACTOR_BOOMCONFIG_INVERTROCKER (1.0F)
 #define CONFIGURATION_SCALING_OFFSET_BOOMCONFIG_INVERTROCKER (0.0F)
+#define CONFIGURATION_SCALING_FACTOR_BOOMCONFIG_INVERTLIMITSWITCHPOS (1.0F)
+#define CONFIGURATION_SCALING_OFFSET_BOOMCONFIG_INVERTLIMITSWITCHPOS (0.0F)
 
 ///Scaling utilities
 #define CONFIGURATION_SET_VALUE_FROM_SCALED_ELEVATORCONFIG_MINSPEED(SCALED_VALUE) (gt_Configuration_DataPoolValues.t_ElevatorConfigValues.u8_minSpeed = (SCALED_VALUE - CONFIGURATION_SCALING_OFFSET_ELEVATORCONFIG_MINSPEED) / CONFIGURATION_SCALING_FACTOR_ELEVATORCONFIG_MINSPEED)
@@ -79,6 +82,8 @@ extern "C" {
 
 #define CONFIGURATION_SET_VALUE_FROM_SCALED_BOOMCONFIG_INVERTROCKER(SCALED_VALUE) (gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertRocker = (SCALED_VALUE - CONFIGURATION_SCALING_OFFSET_BOOMCONFIG_INVERTROCKER) / CONFIGURATION_SCALING_FACTOR_BOOMCONFIG_INVERTROCKER)
 #define CONFIGURATION_GET_SCALED_VALUE_BOOMCONFIG_INVERTROCKER() ((gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertRocker * CONFIGURATION_SCALING_FACTOR_BOOMCONFIG_INVERTROCKER) + CONFIGURATION_SCALING_OFFSET_BOOMCONFIG_INVERTROCKER)
+#define CONFIGURATION_SET_VALUE_FROM_SCALED_BOOMCONFIG_INVERTLIMITSWITCHPOS(SCALED_VALUE) (gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertLimitSwitchPos = (SCALED_VALUE - CONFIGURATION_SCALING_OFFSET_BOOMCONFIG_INVERTLIMITSWITCHPOS) / CONFIGURATION_SCALING_FACTOR_BOOMCONFIG_INVERTLIMITSWITCHPOS)
+#define CONFIGURATION_GET_SCALED_VALUE_BOOMCONFIG_INVERTLIMITSWITCHPOS() ((gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertLimitSwitchPos * CONFIGURATION_SCALING_FACTOR_BOOMCONFIG_INVERTLIMITSWITCHPOS) + CONFIGURATION_SCALING_OFFSET_BOOMCONFIG_INVERTLIMITSWITCHPOS)
 
 /* -- Types --------------------------------------------------------------------------------------------------------- */
 ///Elements in list "ElevatorConfig":
@@ -99,6 +104,7 @@ typedef struct
 typedef struct
 {
    uint8 u8_invertRocker; /* Parameter description */
+   uint8 u8_invertLimitSwitchPos; /* Parameter description */
 } T_Configuration_BoomConfig_Values;
 
 ///Elements of all lists:
@@ -118,7 +124,7 @@ extern const T_osy_dpa_data_pool gt_Configuration_DataPool;
 
 /* -- Function Prototypes ------------------------------------------------------------------------------------------- */
 ///unique ID to ensure consistency between .h and .c files
-extern void configuration_project_id_4215645038(void);
+extern void configuration_project_id_3275637144(void);
 
 /* -- Implementation ------------------------------------------------------------------------------------------------ */
 #ifdef __cplusplus

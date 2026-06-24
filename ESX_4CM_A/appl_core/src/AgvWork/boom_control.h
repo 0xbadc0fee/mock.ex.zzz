@@ -13,8 +13,15 @@
 #define APPL_CORE_SRC_AGVWORK_BOOM_CONTROL_H_
 
 /* -- Includes ------------------------------------------------------------------------------------------------------ */
+//STD
+
+//PLATFORM - STW
 #include "stwtypes.h"
+
+//APPLICATION
+#include "can_device_definition.h"
 #include "hmi_definition.h"
+#include "input_handler_lib.h"
 
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
@@ -30,12 +37,14 @@
 typedef struct
 {
         uint8 u8_invertRocker;
+        uint8 u8_invertLimitSwitchPos;
 }T_Config_Boom;
 
 typedef struct
 {
         // local variables
-        uint8 u8_liftLowerCommand;
+        uint8 u8_liftBoomCommand;
+        uint8 u8_lowerBoomCommand;
         uint8 u8_limitLower;
         uint8 u8_limitUpper;
 
@@ -59,7 +68,7 @@ typedef struct
 
 
 /* -- Function Prototypes ------------------------------------------------------------------------------------------- */
-sint16 init_boomControl(T_UserInterface *_ui, T_Config_Boom *_nvmBoom);
+sint16 init_boomControl(T_CANDevices *_can_dev, T_Config_Boom *_nvmBoom);
 sint16 update_boomControl(void);
 
 

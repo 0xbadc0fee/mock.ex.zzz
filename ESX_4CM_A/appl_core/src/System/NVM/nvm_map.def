@@ -16,3 +16,4 @@ NVM_FIELD(sweeperMaxRPM, CONFIGURATION_LIST_INDEX_SWEEPERCONFIG, gt_Configuratio
 
 /* Boom Control Parameters */
 NVM_FIELD(boomInvertRocker, CONFIGURATION_LIST_INDEX_BOOMCONFIG, gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertRocker, gt_boomConfig.u8_invertRocker)
+NVM_FIELD(boomInvertLimitSwitchPos, CONFIGURATION_LIST_INDEX_BOOMCONFIG, gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertLimitSwitchPos, gt_boomConfig.u8_invertLimitSwitchPos)

@@ -83,9 +83,21 @@
             <list nvm-crc-active="false" nvm-crc="0" nvm-start-address="200" nvm-size="100">
                 <name>BoomConfig</name>
                 <comment/>
-                <data-elements length="1">
+                <data-elements length="2">
                     <data-element factor="1" offset="0" interpret_as_string="false" nvm-start-address="200">
                         <name>invertRocker</name>
+                        <type base-type="uint8" is-array="false"/>
+                        <comment>Parameter description</comment>
+                        <min-value value="0"/>
+                        <max-value value="1"/>
+                        <unit/>
+                        <access>read-write</access>
+                        <data-set-values>
+                            <data-set-value value="0"/>
+                        </data-set-values>
+                    </data-element>
+                    <data-element factor="1" offset="0" interpret_as_string="false" nvm-start-address="201">
+                        <name>invertLimitSwitchPos</name>
                         <type base-type="uint8" is-array="false"/>
                         <comment>Parameter description</comment>
                         <min-value value="0"/>

@@ -49,6 +49,13 @@ Thumbs.db
 *.wmv
 
 Release/
+appl_core_release/
+
+# STW Build files
+*.o
+*.elf
+*.hex
+
 
 #Docs
 ESX_4CM_A/appl_core_release/
