@@ -24,13 +24,15 @@
 #include "boom_control.h"
 #include "stwerrors.h"
 #include "stwtypes.h"
+#include "hw_inputs.h"
+#include "hw_outputs.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 /* -- Types --------------------------------------------------------------------------------------------------------- */
 /* -- Global Variables ---------------------------------------------------------------------------------------------- */
 /* -- Module Global Variables --------------------------------------------------------------------------------------- */
 static T_BoomControl mt_boom;
-
+static uint8 u8_invertLimitSwitches = 0;
 /* -- Module Global Function Prototypes ----------------------------------------------------------------------------- */
 
 /* -- Implementation ------------------------------------------------------------------------------------------------ */
@@ -63,6 +65,14 @@ sint16 init_boomControl(T_CANDevices *_can_dev, T_Config_Boom *_nvmBoom)
         mt_boom.pu8_liftCommand = &_can_dev->t_joystickJSLX.u8_b3_state;
         mt_boom.pu8_lowerCommand = &_can_dev->t_joystickJSLX.u8_b2_state;
     }
+
+    if (mt_boom.pt_nvmBoom->u8_invertLimitSwitchPos != 0)
+    {
+        // TODO_SGC map NVM config'd HW limit switches to local var
+        u8_invertLimitSwitches = TRUE;
+    }
+
+
     return s16_error;
 }
 
@@ -71,17 +81,57 @@ sint16 update_boomControl(void)
 {
     sint16 s16_error = C_NO_ERR;
 
-    float32 f32_boom_limit_1 = 0;
-    float32 f32_boom_limit_2 = 0;
+    float32 f32_boom_limit_lo = 0;
+    float32 f32_boom_limit_hi = 0;
 
-    uint8 u8_boom_lift = FALSE;
-    uint8 u8_boom_lower = FALSE;
+    uint8 u8_boom_lift_output = FALSE;
+    uint8 u8_boom_lower_output = FALSE;
 
-    // TODO_SGC get CAN joystick inputs
-    // TODO_SGC get HW inputs chassis / operator presence / boom limit switches
+    // TODO_SGC map NVM config'd CAN joystick inputs to local control var
+    mt_boom.u8_liftBoomCommand = *(mt_boom.pu8_liftCommand);
+    mt_boom.u8_lowerBoomCommand = *(mt_boom.pu8_lowerCommand);
 
-    // TODO_SGC check NVM for axis invert flag if need to swap rocker lift & lower buttons
-    // TODO_SGC operate BOOM lift lower between MIN & MAX limit switch range
+    // FR-1.3, FR-1.4 Utilize cylinder mounted lo / hi limit switches
+    if(u8_invertLimitSwitches == TRUE)
+    {
+        get_inputValue("BOOM_LIMIT_1", &f32_boom_limit_hi);
+        get_inputValue("BOOM_LIMIT_2", &f32_boom_limit_lo);
+    }
+    else
+    {
+        get_inputValue("BOOM_LIMIT_2", &f32_boom_limit_hi);
+        get_inputValue("BOOM_LIMIT_1", &f32_boom_limit_lo);
+    }
+
+    // FR-1.1 Control lift / lower outpus based on operator input commands
+    if(mt_boom.u8_liftBoomCommand)
+    {
+        // FR-1.2 Prevent simultaneous activation
+        u8_boom_lower_output = FALSE;
+        if(f32_boom_limit_hi)
+            u8_boom_lift_output = FALSE;
+        else
+            u8_boom_lift_output = TRUE;
+    }
+    else if (mt_boom.u8_lowerBoomCommand)
+    {
+        // FR-1.2 Prevent simultaneous activation
+        u8_boom_lift_output = FALSE;
+        if(f32_boom_limit_lo)
+            u8_boom_lower_output = FALSE;
+        else
+            u8_boom_lower_output = TRUE;
+    }
+    else
+    {
+        u8_boom_lift_output = FALSE;
+        u8_boom_lower_output = FALSE;
+    }
+
+    //set the hardware output
+
+    set_outputValue("BOOM_LIFT_COIL", (float32)u8_boom_lift_output);
+    set_outputValue("BOOM_LOWER_COIL", (float32)u8_boom_lower_output);
 
     return s16_error;
 }

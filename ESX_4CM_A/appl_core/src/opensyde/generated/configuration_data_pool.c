@@ -17,11 +17,11 @@
 ///check for correct version of structure definitions
 #if OSY_DPA_DATA_POOL_DEFINITION_VERSION != 0x0004U
 ///if compilation fails here the openSYDE library version does not match the version of the generated code
-static T_osy_non_existing_type_4215645038 mt_Variable;
+static T_osy_non_existing_type_3275637144 mt_Variable;
 #endif
 
 ///ensure file consistency (if compilation fails here the .h file does not match this .c file)
-CONFIGURATION_PROJECT_ID_4215645038
+CONFIGURATION_PROJECT_ID_3275637144
 
 /* -- Types --------------------------------------------------------------------------------------------------------- */
 
@@ -94,20 +94,23 @@ static const T_osy_dpa_data_set mat_SweeperConfigDataSetTable[CONFIGURATION_SWEE
 ///Minimum values
 static const T_Configuration_BoomConfig_Values mt_BoomConfigMinValues =
 {
-   0U    ///< invertRocker (Parameter description)
+   0U,   ///< invertRocker (Parameter description)
+   0U    ///< invertLimitSwitchPos (Parameter description)
 };
 
 ///Maximum values
 static const T_Configuration_BoomConfig_Values mt_BoomConfigMaxValues =
 {
-   1U    ///< invertRocker (Parameter description)
+   1U,   ///< invertRocker (Parameter description)
+   1U    ///< invertLimitSwitchPos (Parameter description)
 };
 
 ///Dataset values
 static const T_Configuration_BoomConfig_Values mat_BoomConfigDataSetValues [CONFIGURATION_BOOMCONFIG_NUMBER_OF_DATA_SETS] =
 {
    {
-      0U    ///< invertRocker (Parameter description)
+      0U,   ///< invertRocker (Parameter description)
+      0U    ///< invertLimitSwitchPos (Parameter description)
    }
 };
 
@@ -132,7 +135,8 @@ static const T_osy_dpa_element_definition mat_DataPoolSweeperConfigElements[CONF
 
 static const T_osy_dpa_element_definition mat_DataPoolBoomConfigElements[CONFIGURATION_BOOMCONFIG_NUMBER_OF_ELEMENTS] =
 {
-   { OSY_DPA_ELEMENT_TYPE_UINT8, 0U, 1U, &gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertRocker, &mt_BoomConfigMinValues.u8_invertRocker, &mt_BoomConfigMaxValues.u8_invertRocker }
+   { OSY_DPA_ELEMENT_TYPE_UINT8, 0U, 1U, &gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertRocker, &mt_BoomConfigMinValues.u8_invertRocker, &mt_BoomConfigMaxValues.u8_invertRocker },
+   { OSY_DPA_ELEMENT_TYPE_UINT8, 0U, 1U, &gt_Configuration_DataPoolValues.t_BoomConfigValues.u8_invertLimitSwitchPos, &mt_BoomConfigMinValues.u8_invertLimitSwitchPos, &mt_BoomConfigMaxValues.u8_invertLimitSwitchPos }
 };
 
 ///list of lists:
@@ -151,7 +155,7 @@ static const T_osy_dpa_data_pool_definition mt_DataPoolDefinition =
    { 0x00U, 0x00U, 0x00U }, ///< Datapool definition version V0.0r0
    "Configuration",  ///< name of Datapool
    CONFIGURATION_NUMBER_OF_LISTS,
-   0xf46197adU, ///< CRC of Datapool definition
+   0x8f5271c2U, ///< CRC of Datapool definition
    0x00000000U,  ///< NVM start address
    20000U,  ///< number of bytes occupied in NVM
    &mat_DataPoolLists[0],

@@ -85,6 +85,8 @@ sint16 init_hwInputs(void)
     sint16 s16_return = C_NO_ERR;
 
     s16_return |= add_hwInput(throttlePosition);
+    s16_return |= add_hwInput(tvi_boom_limit_1);
+    s16_return |= add_hwInput(tvi_boom_limit_2);
     s16_return |= init_inputHandler();
 
     return s16_return;
