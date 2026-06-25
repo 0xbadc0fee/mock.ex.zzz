@@ -15,13 +15,19 @@
 #include "osy_srv.h"
 
 #include "STW_4CM_HAL/system.h"
+#include "can_handler_lib.h"
 
 #include "hw_inputs.h"
 #include "hw_outputs.h"
 
 #include "checkpoint_handler.h"
 #include "hmi_definition.h"
-#include "can_handler_lib.h"
+
+//PROJECT Modules
+#include "boom_control.h"
+//#include "sweeper_control.h"
+#include "engine_start_control.h"
+
 #include "nvm_handler.h"
 
 #include "ethernet_init.h"
@@ -87,7 +93,8 @@ int main(void)
 //    }
     if(C_NO_ERR == s16_Error)
     {
-        s16_Error += init_sweeperControl(&gt_can_devs, &gt_sweeperConfig);
+        s16_Error += init_engineStarterControl(&gt_can_devs);
+        //s16_Error += init_sweeperControl(&gt_can_devs, &gt_sweeperConfig);
         s16_Error += init_boomControl(&gt_can_devs, &gt_boomConfig);
     }
 
