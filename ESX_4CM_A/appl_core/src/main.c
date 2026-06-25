@@ -94,7 +94,7 @@ int main(void)
     if(C_NO_ERR == s16_Error)
     {
         s16_Error += init_engineStarterControl(&gt_can_devs);
-        //s16_Error += init_sweeperControl(&gt_can_devs, &gt_sweeperConfig);
+        s16_Error += init_sweeperControl(&gt_can_devs, &gt_sweeperConfig);
         s16_Error += init_boomControl(&gt_can_devs, &gt_boomConfig);
     }
 

@@ -44,6 +44,20 @@ sint16 update_engineStarterControl(void)
     sint16 s16_error = C_NO_ERR;
     //TODO_SGC Implement engineStarter updater
 
+    // FR-XX Read HW input ignition key signal
+
+    // FR-XX Read additionals inputs from internal modules
+    //get_joystickStandbyStatus(&u8_joystick_standby);
+
+    // FR-XX Compute Safe-to-Start Precondition(s)
+    // precond: Joystick in neutral pos
+    // precond: Engine is off / less than xxx rpm
+    // precond: operator seat switch is true
+    // precond: PTO is off
+
+    // FR-XX Execute Engine Start when preconditions all met
+
+    // FR-xx Transmit Safe-to-Start Status via CAN
     return s16_error;
 }
 
