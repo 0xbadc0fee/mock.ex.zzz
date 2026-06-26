@@ -20,6 +20,7 @@
 
 //PROJECT
 #include "engine_start_control.h"
+#include "FNR_control.h"
 #include "hw_inputs.h"
 #include "hw_outputs.h"
 
@@ -27,6 +28,8 @@
 /* -- Types -------------------------------------------------------------------------------------------------------- */
 /* -- Function Prototypes ---------------------------------------------------------------------------- */
 void check_engineStatus(void);
+sint16 update_safeToStartStatus(void);
+
 /* -- Module Global Variables -------------------------------------------------------------------------------------- */
 static T_EngineControl mt_engine;
 
@@ -34,20 +37,33 @@ static T_EngineControl mt_engine;
 
 sint16 init_engineStarterControl(T_CANDevices *_can_devs)
 {
+    sint16 s16_error = C_NO_ERR;
+
     //TODO_SGC Implement engineStarter initializer
+
     return C_NO_ERR;
 }
-;
+
+sint16 update_safeToStartStatus(void)
+{
+    sint16 s16_error = 0;
+
+    return s16_error;
+}
 
 sint16 update_engineStarterControl(void)
 {
     sint16 s16_error = C_NO_ERR;
+
+    uint8 u8_joystick_standby_status = 0; //!< local variable for joystick standby status reported by FNR
     //TODO_SGC Implement engineStarter updater
 
     // FR-XX Read HW input ignition key signal
 
     // FR-XX Read additionals inputs from internal modules
-    //get_joystickStandbyStatus(&u8_joystick_standby);
+
+    //get_standbyStatus(&u8)
+    get_standbyStatus(u8_joystick_standby_status);
 
     // FR-XX Compute Safe-to-Start Precondition(s)
     // precond: Joystick in neutral pos
