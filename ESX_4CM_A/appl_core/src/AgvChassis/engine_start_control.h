@@ -30,6 +30,14 @@ typedef struct
 //TX CAN Variables
 
 //Local variables
+    uint8 u8_safe_start_standby;
+    uint8 u8_joystick_standby;
+    uint8 u8_opp_present_standby;
+    uint8 u8_engineRpm_standby;
+    uint8 u8_pto_standby;
+
+    uint8 u8_start_key;
+
     uint8 u8_engine_start_cmd;
     uint32 u32_engine_start_time;
     uint8 u8_engine_status;
