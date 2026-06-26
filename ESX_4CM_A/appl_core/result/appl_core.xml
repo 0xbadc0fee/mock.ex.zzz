@@ -12736,7 +12736,7 @@
   </DiscardedInputSections>
 
 
-  <LinkerInformation name_of_linker="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/bin/ld.exe" date_of_run="26-06-2026 13:36:23">
+  <LinkerInformation name_of_linker="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/bin/ld.exe" date_of_run="26-06-2026 13:53:29">
     <LinkerVersion version_string="(GNU Binutils) 2.20" architecture_name="TriCore" build_string="v2.3" tool_version="v2.7"/>
   </LinkerInformation>
 
@@ -32056,7 +32056,7 @@
         <Pattern value="SafeTLib.debug_abbrev"/>
       </Wildcard>
     </OutputSection>
-    <OutputSection name=".debug_line" memory_region="*default*" start="00000000" size="24480">
+    <OutputSection name=".debug_line" memory_region="*default*" start="00000000" size="24476">
       <Flags>
         <Flag>READONLY</Flag>
       </Flags>
@@ -32065,359 +32065,359 @@
         <Section name=".debug_line" addr="00000000" size="231">
           <Object name="appl_core\src\AgvChassis\FNR_control.o"/>
         </Section>
-        <Section name=".debug_line" addr="000000e7" size="512">
+        <Section name=".debug_line" addr="000000e7" size="508">
           <Object name="appl_core\src\AgvChassis\engine_start_control.o"/>
         </Section>
-        <Section name=".debug_line" addr="000002e7" size="431">
+        <Section name=".debug_line" addr="000002e3" size="431">
           <Object name="appl_core\src\AgvDiag\checkpoint_handler.o"/>
         </Section>
-        <Section name=".debug_line" addr="00000496" size="596">
+        <Section name=".debug_line" addr="00000492" size="596">
           <Object name="appl_core\src\AgvWork\boom_control.o"/>
         </Section>
-        <Section name=".debug_line" addr="000006ea" size="476">
+        <Section name=".debug_line" addr="000006e6" size="476">
           <Object name="appl_core\src\AgvWork\elevator_control.o"/>
         </Section>
-        <Section name=".debug_line" addr="000008c6" size="472">
+        <Section name=".debug_line" addr="000008c2" size="472">
           <Object name="appl_core\src\AgvWork\sweeper_control.o"/>
         </Section>
-        <Section name=".debug_line" addr="00000a9e" size="319">
+        <Section name=".debug_line" addr="00000a9a" size="319">
           <Object name="appl_core\src\HAL\STW_4CM_HAL\system.o"/>
         </Section>
-        <Section name=".debug_line" addr="00000bdd" size="846">
+        <Section name=".debug_line" addr="00000bd9" size="846">
           <Object name="appl_core\src\HAL\can_handler_lib.o"/>
         </Section>
-        <Section name=".debug_line" addr="00000f2b" size="194">
+        <Section name=".debug_line" addr="00000f27" size="194">
           <Object name="appl_core\src\HAL\fault_handler_lib.o"/>
         </Section>
-        <Section name=".debug_line" addr="00000fed" size="734">
+        <Section name=".debug_line" addr="00000fe9" size="734">
           <Object name="appl_core\src\HAL\input_handler_lib.o"/>
         </Section>
-        <Section name=".debug_line" addr="000012cb" size="537">
+        <Section name=".debug_line" addr="000012c7" size="537">
           <Object name="appl_core\src\HAL\nvm_handler_lib.o"/>
         </Section>
-        <Section name=".debug_line" addr="000014e4" size="732">
+        <Section name=".debug_line" addr="000014e0" size="732">
           <Object name="appl_core\src\HAL\output_handler_lib.o"/>
         </Section>
-        <Section name=".debug_line" addr="000017c0" size="840">
+        <Section name=".debug_line" addr="000017bc" size="840">
           <Object name="appl_core\src\System\Ethernet\ethernet_init.o"/>
         </Section>
-        <Section name=".debug_line" addr="00001b08" size="421">
+        <Section name=".debug_line" addr="00001b04" size="421">
           <Object name="appl_core\src\System\IO\hw_inputs.o"/>
         </Section>
-        <Section name=".debug_line" addr="00001cad" size="417">
+        <Section name=".debug_line" addr="00001ca9" size="417">
           <Object name="appl_core\src\System\IO\hw_outputs.o"/>
         </Section>
-        <Section name=".debug_line" addr="00001e4e" size="714">
+        <Section name=".debug_line" addr="00001e4a" size="714">
           <Object name="appl_core\src\System\NVM\nvm_handler.o"/>
         </Section>
-        <Section name=".debug_line" addr="00002118" size="1673">
+        <Section name=".debug_line" addr="00002114" size="1673">
           <Object name="appl_core\src\main.o"/>
         </Section>
-        <Section name=".debug_line" addr="000027a1" size="380">
+        <Section name=".debug_line" addr="0000279d" size="380">
           <Object name="appl_core\src\opensyde\generated\checkpoints_data_pool.o"/>
         </Section>
-        <Section name=".debug_line" addr="0000291d" size="534">
+        <Section name=".debug_line" addr="00002919" size="534">
           <Object name="appl_core\src\opensyde\generated\comm_j1939_can1.o"/>
         </Section>
-        <Section name=".debug_line" addr="00002b33" size="384">
+        <Section name=".debug_line" addr="00002b2f" size="384">
           <Object name="appl_core\src\opensyde\generated\configuration_data_pool.o"/>
         </Section>
-        <Section name=".debug_line" addr="00002cb3" size="368">
+        <Section name=".debug_line" addr="00002caf" size="368">
           <Object name="appl_core\src\opensyde\generated\j1939_data_pool.o"/>
         </Section>
-        <Section name=".debug_line" addr="00002e23" size="797">
+        <Section name=".debug_line" addr="00002e1f" size="797">
           <Object name="appl_core\src\opensyde\generated\osy_init.o"/>
         </Section>
-        <Section name=".debug_line" addr="00003140" size="1222">
+        <Section name=".debug_line" addr="0000313c" size="1222">
           <Object name="appl_core\src\opensyde\j1939\osy_app_j1939.o"/>
         </Section>
-        <Section name=".debug_line" addr="00003606" size="220">
+        <Section name=".debug_line" addr="00003602" size="220">
           <Object name="appl_core\src\opensyde\osy_app.o"/>
         </Section>
-        <Section name=".debug_line" addr="000036e2" size="1325">
+        <Section name=".debug_line" addr="000036de" size="1325">
           <Object name="appl_core\src\opensyde\osy_srv.o"/>
         </Section>
-        <Section name=".debug_line" addr="00003c0f" size="120">
+        <Section name=".debug_line" addr="00003c0b" size="120">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_lshrdi3.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00003c87" size="116">
+        <Section name=".debug_line" addr="00003c83" size="116">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="memcpy.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00003cfb" size="121">
+        <Section name=".debug_line" addr="00003cf7" size="121">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="memcmp.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00003d74" size="114">
+        <Section name=".debug_line" addr="00003d70" size="114">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_fixunsdfdi.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00003de6" size="115">
+        <Section name=".debug_line" addr="00003de2" size="115">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_floatdidf.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00003e59" size="108">
+        <Section name=".debug_line" addr="00003e55" size="108">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_sf_to_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00003ec5" size="243">
+        <Section name=".debug_line" addr="00003ec1" size="243">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_addsub_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00003fb8" size="193">
+        <Section name=".debug_line" addr="00003fb4" size="193">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_mul_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004079" size="172">
+        <Section name=".debug_line" addr="00004075" size="172">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_div_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004125" size="120">
+        <Section name=".debug_line" addr="00004121" size="120">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_ne_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="0000419d" size="125">
+        <Section name=".debug_line" addr="00004199" size="125">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_si_to_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="0000421a" size="110">
+        <Section name=".debug_line" addr="00004216" size="110">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_make_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004288" size="87">
+        <Section name=".debug_line" addr="00004284" size="87">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_thenan_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000042df" size="120">
+        <Section name=".debug_line" addr="000042db" size="120">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_usi_to_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004357" size="256">
+        <Section name=".debug_line" addr="00004353" size="256">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="udivdi3.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004457" size="243">
+        <Section name=".debug_line" addr="00004453" size="243">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="umoddi3.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="0000454a" size="119">
+        <Section name=".debug_line" addr="00004546" size="119">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="memmove.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000045c1" size="116">
+        <Section name=".debug_line" addr="000045bd" size="116">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_ashldi3.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004635" size="112">
+        <Section name=".debug_line" addr="00004631" size="112">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_fixunsdfsi.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000046a5" size="136">
+        <Section name=".debug_line" addr="000046a1" size="136">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_unpack_sf.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="0000472d" size="176">
+        <Section name=".debug_line" addr="00004729" size="176">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_pack_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000047dd" size="145">
+        <Section name=".debug_line" addr="000047d9" size="145">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_unpack_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="0000486e" size="168">
+        <Section name=".debug_line" addr="0000486a" size="168">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_fpcmp_parts_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004916" size="120">
+        <Section name=".debug_line" addr="00004912" size="120">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_ge_df.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="0000498e" size="116">
+        <Section name=".debug_line" addr="0000498a" size="116">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="_df_to_si.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004a02" size="278">
+        <Section name=".debug_line" addr="000049fe" size="278">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161\libgcc.a">
             <Object name="udiv6432.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004b18" size="164">
+        <Section name=".debug_line" addr="00004b14" size="164">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="abort.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004bbc" size="109">
+        <Section name=".debug_line" addr="00004bb8" size="109">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="errno.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004c29" size="266">
+        <Section name=".debug_line" addr="00004c25" size="266">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="exit.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004d33" size="238">
+        <Section name=".debug_line" addr="00004d2f" size="238">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="raise.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004e21" size="159">
+        <Section name=".debug_line" addr="00004e1d" size="159">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="signal.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004ec0" size="105">
+        <Section name=".debug_line" addr="00004ebc" size="105">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="strcmp.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004f29" size="177">
+        <Section name=".debug_line" addr="00004f25" size="177">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="strlen.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00004fda" size="169">
+        <Section name=".debug_line" addr="00004fd6" size="169">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="strncmp.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005083" size="192">
+        <Section name=".debug_line" addr="0000507f" size="192">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="strncpy.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005143" size="165">
+        <Section name=".debug_line" addr="0000513f" size="165">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="xctype.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000051e8" size="95">
+        <Section name=".debug_line" addr="000051e4" size="95">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="xexit.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005247" size="148">
+        <Section name=".debug_line" addr="00005243" size="148">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="xfiles.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000052db" size="371">
+        <Section name=".debug_line" addr="000052d7" size="371">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="xstoul.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="0000544e" size="167">
+        <Section name=".debug_line" addr="0000544a" size="167">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="xtolotab.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000054f5" size="247">
+        <Section name=".debug_line" addr="000054f1" size="247">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="fputs.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000055ec" size="167">
+        <Section name=".debug_line" addr="000055e8" size="167">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="memchr.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005693" size="103">
+        <Section name=".debug_line" addr="0000568f" size="103">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="strrchr.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000056fa" size="236">
+        <Section name=".debug_line" addr="000056f6" size="236">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="xfwprep.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000057e6" size="292">
+        <Section name=".debug_line" addr="000057e2" size="292">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="fclose.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="0000590a" size="227">
+        <Section name=".debug_line" addr="00005906" size="227">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="fflush.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="000059ed" size="177">
+        <Section name=".debug_line" addr="000059e9" size="177">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="xatexit.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005a9e" size="235">
+        <Section name=".debug_line" addr="00005a9a" size="235">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libdnk_c.a">
             <Object name="xfofind.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005b89" size="108">
+        <Section name=".debug_line" addr="00005b85" size="108">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libos.a">
             <Object name="vio_close.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005bf5" size="108">
+        <Section name=".debug_line" addr="00005bf1" size="108">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libos.a">
             <Object name="vio_virtio.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005c61" size="200">
+        <Section name=".debug_line" addr="00005c5d" size="200">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libos.a">
             <Object name="vio_write.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005d29" size="116">
+        <Section name=".debug_line" addr="00005d25" size="116">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libos.a">
             <Object name="libos_exit.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005d9d" size="121">
+        <Section name=".debug_line" addr="00005d99" size="121">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libos.a">
             <Object name="vio_remove.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005e16" size="107">
+        <Section name=".debug_line" addr="00005e12" size="107">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libos.a">
             <Object name="vio_rmdir.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005e81" size="109">
+        <Section name=".debug_line" addr="00005e7d" size="109">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libos.a">
             <Object name="libos_errno.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005eee" size="109">
+        <Section name=".debug_line" addr="00005eea" size="109">
           <Library name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/../../../../tricore/lib/tc161\libos.a">
             <Object name="vio_unlink.o"/>
           </Library>
         </Section>
-        <Section name=".debug_line" addr="00005f5b" size="69">
+        <Section name=".debug_line" addr="00005f57" size="69">
           <Object name="c:/hightec/toolchains/tricore/v4.9.2.0/bin/../lib/gcc/tricore/4.9.4/tc161/crtn.o"/>
         </Section>
       </Wildcard>

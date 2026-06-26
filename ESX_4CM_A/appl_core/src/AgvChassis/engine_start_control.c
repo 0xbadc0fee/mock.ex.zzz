@@ -48,25 +48,15 @@ sint16 update_safeToStartStatus(void)
 {
     sint16 s16_error = 0;
 
-    //TODO_SGC Safe to start when joystick_standby and operator_standby TRUE
-    // FR-XX Compute Safe-to-Start Precondition(s)
-    // precond: Joystick in neutral pos
-    // precond: Engine is off / less than xxx rpm
-    // precond: operator seat switch is true
-    // precond: PTO is off
-
-    // 1. Collect or compute all standby statuses
-
-    // 1.1 Joystick
+    // FR-3.1, FR-3.4 Collect or compute all standby statuses
     get_standbyStatus(&mt_engine.u8_joystick_standby);
+        // read opperator presence
+        // read engine rpm
+        // read pto status
 
-    // 1.2 Operator Presence
+    // FR-3.2 Engine RPM < 450
 
-    // 1.3 Engine RPM
-
-    // 1.4 Power Take Off
-
-    // 2. Compute overall safe_start_standby value (0 = safe)
+    // FR-3.3 Compute overall safe_start_standby value (0 = safe)
     mt_engine.u8_safe_start_standby = 0;
     mt_engine.u8_safe_start_standby += mt_engine.u8_joystick_standby;
     mt_engine.u8_safe_start_standby += mt_engine.u8_opp_present_standby;
@@ -80,22 +70,10 @@ sint16 update_engineStarterControl(void)
 {
     sint16 s16_error = C_NO_ERR;
 
-    //uint8 u8_joystick_standby_status = 0; //!< local variable for joystick standby status reported by FNR
-    //TODO_SGC Implement engineStarter updater
-
-    // FR-XX Read HW input ignition key signal
-
-    // FR-XX Read additionals inputs from internal modules
-
-    // FR-XX Compute Safe-to-Start Precondition(s)
-    // precond: Joystick in neutral pos
-    // precond: Engine is off / less than xxx rpm
-    // precond: operator seat switch is true
-    // precond: PTO is off
+    // FR-3.4 Compute safe to start status
     update_safeToStartStatus();
 
-    // FR-XX Execute Engine Start when preconditions all met
-
+    // FR-3.3 Execute Engine Start when preconditions all met
     if (mt_engine.u8_start_key)
     {
         if (mt_engine.u8_safe_start_standby != 0)
@@ -113,7 +91,9 @@ sint16 update_engineStarterControl(void)
             do {} while(0);
     }
 
-    // FR-xx Transmit Safe-to-Start Status via CAN
+    // FR-3.5 Transmit Safe-to-Start Status via CAN
+    // TODO_SGC can message
+
     return s16_error;
 }
 
