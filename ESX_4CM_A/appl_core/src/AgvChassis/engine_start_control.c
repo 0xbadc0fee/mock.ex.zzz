@@ -44,23 +44,23 @@ sint16 init_engineStarterControl(T_CANDevices *_can_devs)
     //TODO_SGC Implement engineStarter initializer
     //populate local struct with RX EEC1 inputs
     mt_engine.pu16_engine_speed = &_can_devs->t_engine.u16_engineSpeed;
-
+    //mt_engine.pu16_engine_speed = &_can_devs->t_engine.u16_engine_speed;
     //TODO_SGC get PTO status ?? or skip
 
-    return C_NO_ERR;
+    return s16_error;
 }
 
 sint16 update_safeToStartStatus(void)
 {
     sint16 s16_error = 0;
-    sint16 s16_current_engine_rpm = 0;
+    //sint16 s16_current_engine_rpm = 0;
     float32 f32_value = 0.0F;
 
     // FR-3.1, FR-3.4 Collect or compute all standby statuses
     s16_error += get_standbyStatus(&mt_engine.u8_joystick_standby);
 
     // read operator presence
-    get_inputValue("OPPERATOR_PRESENT", &f32_value);
+    s16_error += get_inputValue("OPPERATOR_PRESENT", &f32_value);
     mt_engine.u8_opp_present_standby = (f32_value != FALSE) ? TRUE : FALSE;
 
     // read engine rpm
