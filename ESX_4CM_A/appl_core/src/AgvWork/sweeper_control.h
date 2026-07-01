@@ -10,7 +10,7 @@
 
 //----------------------------------------------------------------------------------------------------------------------
 #ifndef APPL_CORE_SRC_AGVWORK_SWEEPER_CONTROL_H_
-#define APPL_CORE_SRC_AGVwORK_SWEEPER_CONTROL_H_
+#define APPL_CORE_SRC_AGVWORK_SWEEPER_CONTROL_H_
 
 /* -- Includes ------------------------------------------------------------------------------------------------------ */
 #include "stwtypes.h"
