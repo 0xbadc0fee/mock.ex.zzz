@@ -38,6 +38,31 @@ T_VehicleOutput elevatorControlValve =
             .u16_dti                = 0,
         };
 
+T_VehicleOutput tvo_boom_lift =
+{
+            .Name_Description       = "BOOM_LIFT_COIL",
+            .u16_hardwareID         = X_OUT_OPHSP2A_13,
+            .e_outputType           = OT_DIGITAL,
+
+            .f32_outputValue        = 0.0F,
+            .f32_prevOutputValue    = 0.0F,
+            .mq_outputChanged       = TRUE,
+
+            .u8_diagEnabled         = FALSE,
+};
+
+T_VehicleOutput tvo_boom_lower =
+{
+            .Name_Description       = "BOOM_LOWER_COIL",
+            .u16_hardwareID         = X_OUT_OPHSP2A_14,
+            .e_outputType           = OT_DIGITAL,
+
+            .f32_outputValue        = 0.0F,
+            .f32_prevOutputValue    = 0.0F,
+            .mq_outputChanged       = TRUE,
+
+            .u8_diagEnabled         = FALSE,
+};
 
 /* -- Implementation  ---------------------------------------------------------------------------------------------- */
 /** \brief Initialize Hardware Outputs

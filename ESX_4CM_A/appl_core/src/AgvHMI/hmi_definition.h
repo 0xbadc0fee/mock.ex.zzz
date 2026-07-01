@@ -17,15 +17,17 @@
 #include "hmi_joystick.h"
 #include "hmi_8button_panel.h"
 #include "hmi_8772_display.h"
+
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 /* -- Types --------------------------------------------------------------------------------------------------------- */
 
 /** \brief Structure to contain all CAN UI Elements for the 8772 **/
 typedef struct
 {
-        T_JoystickJS6000 t_joystick;    //!<JS6000 Joystick
-        T_8ButtonPanel   t_buttonPanel; //!<8 Button UI Panel
-        T_8772_Display   t_display;     //!<8772 Display
+        T_JoystickJS6000 t_joystick;     //!< JS6000 Joystick
+        T_8ButtonPanel   t_buttonPanel;  //!<8 Button UI Panel
+        T_8772_Display   t_display;      //!<8772 Display
+        T_JoystickJSLX   t_joystickJSLX; //!< JSL Style J1939 Joystick
 
 }T_UserInterface;
 

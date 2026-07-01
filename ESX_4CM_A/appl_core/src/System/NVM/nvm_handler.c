@@ -33,6 +33,8 @@
 /* -- Module Global Function Prototypes ---------------------------------------------------------------------------- */
 /* -- Module Global Variables -------------------------------------------------------------------------------------- */
 T_Config_Elevator gt_elevatorConfig;    //!<Structure that holds all agVWork - Elevator Control NVM Config
+T_Config_Sweeper gt_sweeperConfig;      //!<Structure that holds all agVWork - Sweeper Drum NVM Config
+T_Config_Boom gt_boomConfig;            //!<Structure that holds all agvWork - Boom Configs
 
 /* -- Implementation  ---------------------------------------------------------------------------------------------- */
 sint16 init_nvmParameters(void)
@@ -44,7 +46,7 @@ sint16 init_nvmParameters(void)
     init_osyNVMDatapools(CONFIGURATION_DATA_POOL_INDEX, CONFIGURATION_NUMBER_OF_LISTS);
 
     //populate all control nvm structs with globals
-    #define NVM_FIELD(name, DPL_LIST, DPL_VALUE, CNTRL_VALUE) DP_ASSIGN((CNTRL_VALUE), (DPL_VALUE));
+    #define NVM_FIELD(name, DPL_LIST, DPL_VALUE, CNTRL_VALUE) VAR_ASSIGN((CNTRL_VALUE), (DPL_VALUE));
     #include "nvm_map.def"
     #undef NVM_FIELD
 
