@@ -48,13 +48,13 @@ Thumbs.db
 *.mov
 *.wmv
 
-Release/
-appl_core_release/
+# Release/
+# appl_core_release/
 
 # STW Build files
 *.o
 *.elf
-*.hex
+# *.hex
 
 
 #Docs

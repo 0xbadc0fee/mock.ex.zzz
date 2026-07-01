@@ -23,11 +23,13 @@
 #include "FNR_control.h"
 #include "hw_inputs.h"
 #include "hw_outputs.h"
+#include "can_engine.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------ */
 /* -- Types -------------------------------------------------------------------------------------------------------- */
 /* -- Function Prototypes ---------------------------------------------------------------------------- */
 void check_engineStatus(void);
+sint16 check_engineStandby(T_CANDevices *_can_devs);
 sint16 update_safeToStartStatus(void);
 
 /* -- Module Global Variables -------------------------------------------------------------------------------------- */
@@ -40,6 +42,10 @@ sint16 init_engineStarterControl(T_CANDevices *_can_devs)
     sint16 s16_error = C_NO_ERR;
 
     //TODO_SGC Implement engineStarter initializer
+    //populate local struct with RX EEC1 inputs
+    mt_engine.pu16_engine_speed = &_can_devs->t_engine.u16_engineSpeed;
+
+    //TODO_SGC get PTO status ?? or skip
 
     return C_NO_ERR;
 }
@@ -47,12 +53,21 @@ sint16 init_engineStarterControl(T_CANDevices *_can_devs)
 sint16 update_safeToStartStatus(void)
 {
     sint16 s16_error = 0;
+    sint16 s16_current_engine_rpm = 0;
+    float32 f32_value = 0.0F;
 
     // FR-3.1, FR-3.4 Collect or compute all standby statuses
-    get_standbyStatus(&mt_engine.u8_joystick_standby);
-        // read opperator presence
-        // read engine rpm
+    s16_error += get_standbyStatus(&mt_engine.u8_joystick_standby);
+
+    // read operator presence
+    get_inputValue("OPPERATOR_PRESENT", &f32_value);
+    mt_engine.u8_opp_present_standby = (f32_value != FALSE) ? TRUE : FALSE;
+
+    // read engine rpm
+    s16_error += check_engineStandby(&mt_engine);
+
         // read pto status
+            //
 
     // FR-3.2 Engine RPM < 450
 
@@ -102,4 +117,14 @@ void get_engineStatus();
 void get_engineRuntime();
 
 void check_engineStatus();
+
+sint16 check_engineStandby(T_CANDevices *_can_devs)
+{
+    sint16 s16_error = C_NO_ERR;
+    uint16 u16_curr_engine_speed = &_can_devs->t_engine.u16_engineSpeed;
+
+    s16_error = (u16_curr_engine_speed < 450) ? C_NO_ERR : C_RANGE;
+
+    return s16_error;
+}
 //EOF

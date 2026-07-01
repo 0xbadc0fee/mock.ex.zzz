@@ -44,7 +44,6 @@ sint16 init_FNRControl()
 {
     sint16 s16_error = 0;
 
-
     return s16_error;
 }
 
