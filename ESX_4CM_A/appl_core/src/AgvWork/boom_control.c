@@ -22,8 +22,6 @@
 
 //PROJECT
 #include "boom_control.h"
-#include "stwerrors.h"
-#include "stwtypes.h"
 #include "hw_inputs.h"
 #include "hw_outputs.h"
 
@@ -33,6 +31,7 @@
 /* -- Module Global Variables --------------------------------------------------------------------------------------- */
 static T_BoomControl mt_boom;
 static uint8 u8_invertLimitSwitches = 0;
+
 /* -- Module Global Function Prototypes ----------------------------------------------------------------------------- */
 
 /* -- Implementation ------------------------------------------------------------------------------------------------ */

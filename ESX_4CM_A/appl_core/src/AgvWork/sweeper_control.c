@@ -11,9 +11,16 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 /* -- Includes ------------------------------------------------------------------------------------------------------ */
-#include "sweeper_control.h"
+#include <stdint.h>
+#include "x_stdtypes.h"
+
+
 #include "stwerrors.h"
 #include "stwtypes.h"
+
+#include "sweeper_control.h"
+#include "hw_inputs.h"
+#include "hw_outputs.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 /* -- Types --------------------------------------------------------------------------------------------------------- */
@@ -42,17 +49,16 @@ static T_SweeperControl mt_sweeper;
  * \return s16_Error Error Code
  * \retval C_NO_ERR Function Executed Properly
  */
-sint16 init_sweeperControl(T_UserInterface *_ui, T_Config_Sweeper *_nvmSweeper)
+sint16 init_sweeperControl(T_CANDevices *_can_dev, T_Config_Sweeper *_nvmSweeper)
 {
-
     sint16 s16_error = C_NO_ERR;
-
-    //populate local copy of RX HMI elements
-    mt_sweeper.pu8_onOffCommand = &_ui->t_joystick.u8_b1_state;
-    mt_sweeper.ps16_requestedSpeed = &_ui->t_joystickJSLX.s16xPos;
 
     //populate local copy of NVM params
     mt_sweeper.pt_nvmSweeper = _nvmSweeper;
+
+    //populate local copy of RX HMI elements
+    mt_sweeper.pu8_onOffCommand = &_can_dev->t_joystickJSLX.u8_b1_state;
+    mt_sweeper.ps16_requestedSpeed = &_can_dev->t_joystickJSLX.s16xPos;
 
     return s16_error;
 
@@ -80,3 +86,4 @@ sint16 update_sweeperControl(void)
     return s16_error;
 }
 
+//EOF

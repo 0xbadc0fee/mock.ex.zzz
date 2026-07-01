@@ -19,7 +19,7 @@
 typedef struct
 {
         // local control variables
-        uint8 u8_joystick_standby_status;  //!< Joystick in standby state when y-axis @ 0 position and all buttons inactive
+        uint8 u8_joystick_standby_status;  //<! Joystick in standby state when y-axis @ 0 position and all buttons inactive
 
         // TX can variables
 

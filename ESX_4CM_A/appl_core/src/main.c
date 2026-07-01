@@ -25,7 +25,7 @@
 
 //PROJECT Modules
 #include "boom_control.h"
-//#include "sweeper_control.h"
+#include "sweeper_control.h"
 #include "engine_start_control.h"
 
 #include "nvm_handler.h"
@@ -91,6 +91,7 @@ int main(void)
 //    {
 //        s16_Error += init_elevatorControl(&gt_ui, &gt_elevatorCheckpoints, &gt_elevatorConfig); //Initialize Elevator Control
 //    }
+
     if(C_NO_ERR == s16_Error)
     {
         s16_Error += init_engineStarterControl              (&gt_can_devs);
@@ -126,12 +127,12 @@ int main(void)
         //Run AgvChassis Controls
 
         //Run AgvWork Controls
-//        update_elevatorControl();  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
+        //update_elevatorControl();
         update_sweeperControl();
         update_boomControl();
 
         //Outputs
-//        update_checkpointHandler();
+        //update_checkpointHandler();
         update_canOutputs();
         update_hwOutputs();
 
