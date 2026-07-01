@@ -17,6 +17,7 @@
 //STW
 #include "stwerrors.h"
 #include "stwtypes.h"
+#include "system.h"
 
 //PROJECT
 #include "engine_start_control.h"
@@ -28,8 +29,8 @@
 /* -- Defines ------------------------------------------------------------------------------------------------------ */
 /* -- Types -------------------------------------------------------------------------------------------------------- */
 /* -- Function Prototypes ---------------------------------------------------------------------------- */
-void check_engineStatus(void);
-sint16 check_engineStandby(T_CANDevices *_can_devs);
+// void check_engineStatus(void); UNUSED IN ZZZ MOCK EXERCISE
+sint16 check_engineStandby(void);
 sint16 update_safeToStartStatus(void);
 
 /* -- Module Global Variables -------------------------------------------------------------------------------------- */
@@ -42,34 +43,29 @@ sint16 init_engineStarterControl(T_CANDevices *_can_devs)
     sint16 s16_error = C_NO_ERR;
 
     //TODO_SGC Implement engineStarter initializer
+
     //populate local struct with RX EEC1 inputs
     mt_engine.pu16_engine_speed = &_can_devs->t_engine.u16_engineSpeed;
-    //mt_engine.pu16_engine_speed = &_can_devs->t_engine.u16_engine_speed;
-    //TODO_SGC get PTO status ?? or skip
 
     return s16_error;
 }
 
 sint16 update_safeToStartStatus(void)
 {
-    sint16 s16_error = 0;
-    //sint16 s16_current_engine_rpm = 0;
+    sint16 s16_error = C_NO_ERR;
     float32 f32_value = 0.0F;
 
     // FR-3.1, FR-3.4 Collect or compute all standby statuses
     s16_error += get_standbyStatus(&mt_engine.u8_joystick_standby);
 
     // read operator presence
-    s16_error += get_inputValue("OPPERATOR_PRESENT", &f32_value);
-    mt_engine.u8_opp_present_standby = (f32_value != FALSE) ? TRUE : FALSE;
+    get_inputValue("OPPERATOR_PRESENT", &f32_value);
 
     // read engine rpm
-    s16_error += check_engineStandby(&mt_engine);
-
-        // read pto status
-            //
+    s16_error += check_engineStandby();
 
     // FR-3.2 Engine RPM < 450
+    mt_engine.u8_opp_present_standby = (f32_value != FALSE) ? TRUE : FALSE;
 
     // FR-3.3 Compute overall safe_start_standby value (0 = safe)
     mt_engine.u8_safe_start_standby = 0;
@@ -95,15 +91,11 @@ sint16 update_engineStarterControl(void)
         {
             //TODO_SGC engine start LOGIC
             mt_engine.u8_engine_start_cmd = FALSE;
-            // set can tx value safe to start FALSE
+            // TODO_sgc set can tx value safe to start FALSE
         }
         else if (mt_engine.u8_safe_start_standby == 0)
             mt_engine.u8_engine_start_cmd = TRUE;
-            // set can tx value safe to start FALSE
-
-        else
-            // ?? set warning, undefined start behavior??
-            do {} while(0);
+            // TODO_SGC set can tx value safe to start FALSE
     }
 
     // FR-3.5 Transmit Safe-to-Start Status via CAN
@@ -112,17 +104,19 @@ sint16 update_engineStarterControl(void)
     return s16_error;
 }
 
+/*  UNUSED IN ZZZ MOCK EXERCISE
+
 void get_engineStatus();
-
 void get_engineRuntime();
-
 void check_engineStatus();
 
-sint16 check_engineStandby(T_CANDevices *_can_devs)
+*/
+
+sint16 check_engineStandby()
 {
     sint16 s16_error = C_NO_ERR;
-    uint16 u16_curr_engine_speed = &_can_devs->t_engine.u16_engineSpeed;
 
+    uint16 u16_curr_engine_speed = *mt_engine.pu16_engine_speed;  //dereference struct member pointer for rpm comparison
     s16_error = (u16_curr_engine_speed < 450) ? C_NO_ERR : C_RANGE;
 
     return s16_error;
