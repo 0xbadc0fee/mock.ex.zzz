@@ -15,13 +15,19 @@
 #include "osy_srv.h"
 
 #include "STW_4CM_HAL/system.h"
+#include "can_handler_lib.h"
 
 #include "hw_inputs.h"
 #include "hw_outputs.h"
 
 #include "checkpoint_handler.h"
 #include "hmi_definition.h"
-#include "can_handler_lib.h"
+
+//PROJECT Modules
+#include "boom_control.h"
+#include "sweeper_control.h"
+#include "engine_start_control.h"
+
 #include "nvm_handler.h"
 
 #include "ethernet_init.h"
@@ -85,10 +91,12 @@ int main(void)
 //    {
 //        s16_Error += init_elevatorControl(&gt_ui, &gt_elevatorCheckpoints, &gt_elevatorConfig); //Initialize Elevator Control
 //    }
+
     if(C_NO_ERR == s16_Error)
     {
-        s16_Error += init_sweeperControl(&gt_can_devs, &gt_sweeperConfig);
-        s16_Error += init_boomControl(&gt_can_devs, &gt_boomConfig);
+        s16_Error += init_engineStarterControl              (&gt_can_devs);
+        s16_Error += init_sweeperControl                    (&gt_can_devs, &gt_sweeperConfig);
+        s16_Error += init_boomControl                       (&gt_can_devs, &gt_boomConfig);
     }
 
     // Call this to avoid deadlock in case other cores want to use x_icc_barrier_wait_for()
@@ -99,10 +107,11 @@ int main(void)
       s16_Error += s16_Return;
     }
 
-    if(C_NO_ERR == s16_Error)
+    // DELETEME
+    /*    if(C_NO_ERR == s16_Error)
     {
         s16_Error += init_sweeperControl(&gt_can_devs, &gt_sweeperConfig); //Initialize Sweeper Drum Control
-    }
+    }*/
 
     //add required startup delay here
 
@@ -118,12 +127,12 @@ int main(void)
         //Run AgvChassis Controls
 
         //Run AgvWork Controls
-//        update_elevatorControl();  //TODO_SGC ZZZ-10 ConvertElev2Sweeper
+        //update_elevatorControl();
         update_sweeperControl();
         update_boomControl();
 
         //Outputs
-//        update_checkpointHandler();
+        //update_checkpointHandler();
         update_canOutputs();
         update_hwOutputs();
 

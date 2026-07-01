@@ -27,13 +27,13 @@ typedef struct{
 
     uint8 u8_joystickActive;
 
-    sint16 s16_yPos;        //!<Y Position of Joystick (Forward - Reverse Direction)
-    uint8  u8_b1_state;     //!<Button 1 State (0 = not pressed, 1 = pressed)
-    uint8  u8_b2_state;     //!<Button 2 State (0 = not pressed, 1 = pressed)
-    uint8  u8_b3_state;     //!<Button 3 State (0 = not pressed, 1 = pressed)
-    uint8  u8_b4_state;     //!<Button 4 State (0 = not pressed, 1 = pressed)
-    uint8  u8_b5_state;     //!<Button 5 State (0 = not pressed, 1 = pressed)
-    uint8  u8_b6_state;     //!<Button 6 State (0 = not pressed, 1 = pressed)
+    sint16 s16_yPos;        //<! Y Position of Joystick (Forward - Reverse Direction)
+    uint8  u8_b1_state;     //<! Button 1 State (0 = not pressed, 1 = pressed)
+    uint8  u8_b2_state;     //<! Button 2 State (0 = not pressed, 1 = pressed)
+    uint8  u8_b3_state;     //<! Button 3 State (0 = not pressed, 1 = pressed)
+    uint8  u8_b4_state;     //<! Button 4 State (0 = not pressed, 1 = pressed)
+    uint8  u8_b5_state;     //<! Button 5 State (0 = not pressed, 1 = pressed)
+    uint8  u8_b6_state;     //<! Button 6 State (0 = not pressed, 1 = pressed)
 
 }T_JoystickJS6000;
 
@@ -51,16 +51,16 @@ typedef struct{
         uint8   u8_joystickActive;
 
         // Main Grip Axis
-        sint16  s16yPos;        //!< Y.3-X.2 Grip Y-Axis POS of Joystick
+        sint16  s16yPos;        //<!  Y.3-X.2 Grip Y-Axis POS of Joystick
 
         // Joystick Top Panel
-        uint8   u8_b1_state;    //!< Y.0-X.0 Button
-        uint8   u8_b2_state;    //!< Y.0-X.1-P.1 RTC Rocker Pos 1
-        uint8   u8_b3_state;    //!< Y.0-X.1-P.2 RTC Rocker Pos 2
-        sint16  s16xPos;        //!< Y.0-X.3 Slider X-Axis
-        uint8   u8_b4_state;    //!< Y.1-X.1 Button
-        uint8   u8_b5_state;    //!< Y.1-X.3 Button
-        uint8   u8_b6_state;     //!< Y.2-X.2 Button
+        uint8   u8_b1_state;    //<!  Y.0-X.0 Button
+        uint8   u8_b2_state;    //<!  Y.0-X.1-P.1 RTC Rocker Pos 1
+        uint8   u8_b3_state;    //<!  Y.0-X.1-P.2 RTC Rocker Pos 2
+        sint16  s16xPos;        //<!  Y.0-X.3 Slider X-Axis
+        uint8   u8_b4_state;    //<!  Y.1-X.1 Button
+        uint8   u8_b5_state;    //<!  Y.1-X.3 Button
+        uint8   u8_b6_state;     //<!  Y.2-X.2 Button
 
 }T_JoystickJSLX;
 

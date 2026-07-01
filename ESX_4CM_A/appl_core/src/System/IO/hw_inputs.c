@@ -70,6 +70,18 @@ T_VehicleInput tvi_boom_limit_2 =
     .u8_diagEnabled         = FALSE,
 };
 
+T_VehicleInput tvi_operator_seat_switch =
+{
+    .Name_Description       = "OPPERATOR_PRESENT",
+    .u16_hardwareID         = X_IN_IDA5V_1,
+    .e_inputType            = IT_DIGITAL,
+    .e_circuit              = DEFAULT_DIG_DEBOUNCE,
+    .f32_inputValue         = FALSE,
+    .f32_prevInputValue     = FALSE,
+    .mq_inputChanged        = TRUE,
+    .u8_diagEnabled         = FALSE,
+};
+
 
 /* -- Implementation  ---------------------------------------------------------------------------------------------- */
 /** \brief Initialize Hardware Inputs
@@ -85,6 +97,7 @@ sint16 init_hwInputs(void)
     sint16 s16_return = C_NO_ERR;
 
     s16_return |= add_hwInput(throttlePosition);
+    s16_return |= add_hwInput(tvi_operator_seat_switch);
     s16_return |= add_hwInput(tvi_boom_limit_1);
     s16_return |= add_hwInput(tvi_boom_limit_2);
     s16_return |= init_inputHandler();
