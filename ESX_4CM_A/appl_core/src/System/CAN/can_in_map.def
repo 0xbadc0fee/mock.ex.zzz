@@ -6,6 +6,9 @@
 * SRC_VALUE: expression that yields the value to assign (from datapool)
 */
 
-/* Elevator Control CAN Parameters */
-/*DP2CNTRL(elevatorSpeed, gt_ui.t_display.u8_elevatorSpeedRequest, gt_J1939_DataPoolValues.t_CAN1_RXValues.u8_DISP_CAN_Rec1_AgvHmiElevatorSpeedCmd)*/
-DP2CNTRL(elevatorOnOff, gt_ui.t_joystick.u8_b1_state, 			 gt_J1939_DataPoolValues.t_CAN1_RXValues.u8_BJM1_Joystick1Button1PressedStatus)
+/* Boom Lift-Lower CAN Signals*/
+DP2CNTRL(boomLift,      gt_can_devs.t_joystickJSLX.u8_b3_state,     gt_J1939_DataPoolValues.t_CAN1_RXValues.u8_BJM1_Joystick1Button2PressedStatus)
+DP2CNTRL(boomLower,     gt_can_devs.t_joystickJSLX.u8_b2_state,     gt_J1939_DataPoolValues.t_CAN1_RXValues.u8_BJM1_Joystick1Button3PressedStatus)
+
+/* Engine RPM from EEC1 */
+DP2CNTRL(engineSpeed,   gt_can_devs.t_engine.u16_engineSpeed,        gt_J1939_DataPoolValues.t_CAN1_RXValues.u16_EEC1_EngSpeed)

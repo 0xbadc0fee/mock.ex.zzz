@@ -21,11 +21,15 @@
 #include "x_nvm.h"
 
 #include "elevator_control.h"
+#include "sweeper_control.h"
+#include "boom_control.h"
 
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 /* -- Types --------------------------------------------------------------------------------------------------------- */
 /* -- Global Variables ---------------------------------------------------------------------------------------------- */
-extern T_Config_Elevator gt_elevatorConfig;
+extern T_Config_Elevator    gt_elevatorConfig;      //!< GO_BY example. Elevator N/A to ZZZ mock, use for reference
+extern T_Config_Sweeper     gt_sweeperConfig;       //!< Global configuration for ZZZ rotating Drum Sweeper
+extern T_Config_Boom        gt_boomConfig;          //!< Global configuration for ZZZ Boom Arm
 
 /* -- Function Prototypes ------------------------------------------------------------------------------------------- */
 sint16 init_nvmParameters(void);

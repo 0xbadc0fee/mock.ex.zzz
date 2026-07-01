@@ -12,7 +12,7 @@
 #include "osy_dpd_driver.h"
 #include "osy_srv.h"
 #include "osy_init.h"
-#include "can_handler.h"
+#include "can_handler_lib.h"
 #include "x_sys.h"
 #include "x_sys_rst.h"
 #include "x_icc_barrier.h"
