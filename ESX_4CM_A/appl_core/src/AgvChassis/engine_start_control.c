@@ -59,7 +59,7 @@ sint16 update_safeToStartStatus(void)
     s16_error += get_standbyStatus(&mt_engine.u8_joystick_standby);
 
     // read operator presence
-    get_inputValue("OPPERATOR_PRESENT", &f32_value);
+    get_inputValue("OPERATOR_PRESENT", &f32_value);
 
     // read engine rpm
     s16_error += check_engineStandby();

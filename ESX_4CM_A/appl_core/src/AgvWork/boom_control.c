@@ -75,7 +75,18 @@ sint16 init_boomControl(T_CANDevices *_can_dev, T_Config_Boom *_nvmBoom)
     return s16_error;
 }
 
-
+/**
+ * \brief Update AgvWork - Boom Control
+ *
+ * This function contains cyclical logic for AgvWork - Boom Control.
+ *
+ * Primary logic is to operator the boom arm that carries the rotating drum sweeper.
+ * Operation is based on joystick commands, limit switch orientation, joystick rocker configuration
+ * and operator presence.
+ *
+ * \return s16_error Error Code
+ * \retval C_NO_ERR Function executed properly
+ */
 sint16 update_boomControl(void)
 {
     sint16 s16_error = C_NO_ERR;

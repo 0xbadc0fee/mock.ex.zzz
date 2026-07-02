@@ -75,6 +75,8 @@ sint16 init_sweeperControl(T_CANDevices *_can_dev, T_Config_Sweeper *_nvmSweeper
  * Primary run logic for rotary sweeper.  When permissible, run sweeper at requested speed.
  *
  * Safe operation defined by operator presence, and min - max rotation speed.
+ * Max and Min RPM is configured from NVM values and output is clamped within range.
+ * Ramping is applied to output signal to create soft start affect.
  *
  * \return s16_error Error Code
  * \retval C_NO_ERR Function Executed Properly
@@ -82,17 +84,31 @@ sint16 init_sweeperControl(T_CANDevices *_can_dev, T_Config_Sweeper *_nvmSweeper
 sint16 update_sweeperControl(void)
 {
 
-    sint16 s16_error = C_NO_ERR;
+    sint16 s16_error =              C_NO_ERR;
 
-    // TODO-SGC get inputs joystick
-    // TODO-SGC get inputs chassis / operator presence
-    // TODO-SGC run sweeper at desired speed until shut off
+    sint16 s16_req_sweeper_speed =  SWEEPER_SAFE_STATE;
+    uint8 u8_req_sweeper_run =      SWEEPER_OFF;
+    float32 f32_op_present =        SWEEPER_SAFE_STATE;
+
+    // local copy of requested Sweeper speed
+    s16_req_sweeper_speed = *(mt_sweeper.ps16_requestedSpeed);
+    // local copy of requested Sweeper on/off command
+    u8_req_sweeper_run = *(mt_sweeper.pu8_onOffCommand);
+    // local copy of operator presence
+    get_inputValue("OPERATOR_PRESENT", &f32_op_present);
+
+    // local copy of PTO status
+    // TBD
+
+
+
 
     // FR-2.3 Clamp and scale logic per config params
 
     // FR-2.4 Override req speed to zero when PTO off
 
     // FR-2.5 Apply time based ramp to smooth speed changes
+    // BLOCKED by FR-7 RAMP
 
     // FR-2.6 Output to HW as PWM signal appropriate to sweeper coil specs
 

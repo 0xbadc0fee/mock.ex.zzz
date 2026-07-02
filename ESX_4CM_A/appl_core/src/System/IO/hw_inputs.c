@@ -72,7 +72,7 @@ T_VehicleInput tvi_boom_limit_2 =
 
 T_VehicleInput tvi_operator_seat_switch =
 {
-    .Name_Description       = "OPPERATOR_PRESENT",
+    .Name_Description       = "OPERATOR_PRESENT",
     .u16_hardwareID         = X_IN_IDA5V_1,
     .e_inputType            = IT_DIGITAL,
     .e_circuit              = DEFAULT_DIG_DEBOUNCE,
