@@ -61,7 +61,7 @@ The 4WS Sweeper Vehicle is an operator controlled, wheeled vehicle with the foll
 * (2) Work devices are powered by the Auxiliary power system: a rotating drum sweeper and a boom for lifting and lowering the drum sweeper.
 
 *4WS Sweeper Vehicle (fictional)*  
-![4WS Vehicle Side View][./graphic_01_4WS_Sweeper_Vehicle.svg]
+![4WS Vehicle Side View](./graphic_01_4WS_Sweeper_Vehicle.svg)
 
 ## Vehicle Operation \- Overall
 
@@ -73,7 +73,7 @@ All Operator interactions with the 4WS Vehicle can be defined in some combinatio
 
 
 *Operator Controls*  
-![4WS Cab Controls Detail View][./graphic_02_4WS_detailView_cabControls.svg]
+![4WS Cab Controls Detail View](./graphic_02_4WS_detailView_cabControls.svg)
 
 ## Vehicle Operation \- Joystick
 
@@ -87,17 +87,17 @@ The most conspicuous action of the joystick is a forward and backward control st
 * One thumb-operated slider with a friction hold; oriented vertically with approximately 1 inch of travel between lowest and highest position
 
 *Operator Joystick \- Overview*  
-![two-view orthographic drawing (front view & right view) of Suregrip JSM style joystick.][./graphic_03_joystick_sideView_fwd_neutral_rev.svg]
+![two-view orthographic drawing (front view & right view) of Suregrip JSM style joystick.](./graphic_03_joystick_sideView_fwd_neutral_rev.svg)
 
 The main grip axis uses a signed integer scale. \-100 represents full reverse, 0 represents dead center neutral, and \+100 represents full forward.
 
 *Operator Joystick \- Y Axis FNR*
-![rh side view of Suregrip JSM style joystick in Full Reverse, Neutral, & Full Forward states.][./graphic_04_joystick_twoView_front_and_right.svg]
+![rh side view of Suregrip JSM style joystick in Full Reverse, Neutral, & Full Forward states.](./graphic_04_joystick_twoView_front_and_right.svg)
 
 Each physical control is identified by a grid coordinate. Y0.X0 is the top-left of the joystick from the operator point of view and Y3.X2 is the main grip axis at the base.
 
 *Operator Joystick \- Button ID Grid*  
-![Front-view grid-box layout of Suregrip JSM joystick custom inputs such as momentary buttons, sliders, & rockers.][./graphic_05_joystick_frontView_button_gridMap.svg]
+![Front-view grid-box layout of Suregrip JSM joystick custom inputs such as momentary buttons, sliders, & rockers.](./graphic_05_joystick_frontView_button_gridMap.svg)
 
 The individual Joystick buttons or features and their expected vehicle behavior outputs are listed below.  Each is identified by its unique grid position illustrated in the diagram above.
 
