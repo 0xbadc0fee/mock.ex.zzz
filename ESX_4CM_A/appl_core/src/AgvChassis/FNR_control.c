@@ -40,6 +40,8 @@ T_FNRControl mt_fnr_control;
 
 /* -- Implementation ------------------------------------------------------------------------------------------------ */
 
+
+// needs to be passed can device struct and configuration data struct
 sint16 init_FNRControl()
 {
     sint16 s16_error = 0;

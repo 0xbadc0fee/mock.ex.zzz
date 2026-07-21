@@ -9,13 +9,27 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 
-/* -- Includes ------------------------------------------------------------------------------------------------------ */
-
 /* -- Defines ------------------------------------------------------------------------------------------------------- */
 #ifndef APPL_CORE_SRC_AGVCHASSIS_FNR_CONTROL_H_
 #define APPL_CORE_SRC_AGVCHASSIS_FNR_CONTROL_H_
 
+/* -- Includes ------------------------------------------------------------------------------------------------------ */
+#include "stwtypes.h"
+
+
 /* -- Types --------------------------------------------------------------------------------------------------------- */
+typedef struct
+{
+        uint8 u8_FNR_invertYoke;        // invert push-pull :: fwd-rev mapping
+        uint8 u8_FNR_maxFwdPct;         // set threshold Max FWD
+        uint8 u8_FNR_maxRevPct;         // set threshold Max Rev
+        uint8 u8_FNR_ntrlDeadbandPct;   // set band +/- Neutral -0- position
+        uint8 u8_FNR_accelMaxGain;      // set ramp accel value
+        uint8 u8_FNR_decelMaxGain;      // set ramp decel value (faster decel than accel)
+
+}T_Config_FNR;
+
+
 typedef struct
 {
         // local control variables

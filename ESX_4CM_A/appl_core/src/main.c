@@ -97,6 +97,7 @@ int main(void)
         s16_Error += init_engineStarterControl              (&gt_can_devs);
         s16_Error += init_sweeperControl                    (&gt_can_devs, &gt_sweeperConfig);
         s16_Error += init_boomControl                       (&gt_can_devs, &gt_boomConfig);
+        s16_Error += init_FNRControl                        (&gt_can_devs, &gt_fnrConfig);
     }
 
     // Call this to avoid deadlock in case other cores want to use x_icc_barrier_wait_for()
@@ -125,6 +126,7 @@ int main(void)
         update_canInputs();
 
         //Run AgvChassis Controls
+        update_FNRControl();
 
         //Run AgvWork Controls
         //update_elevatorControl();
