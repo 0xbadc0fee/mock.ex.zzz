@@ -1,111 +1,222 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<!-- Creator: CorelDRAW X7 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.41391in" height="5.25046in" version="1.0" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 463 1006"
- xmlns:xlink="http://www.w3.org/1999/xlink">
+<!--
+  ============================================================================
+  NORMALIZED SVG REFERENCE EXAMPLE
+  ============================================================================
+  Source  : CorelDRAW X7 export, post-processed to normalized form.
+  Purpose : Canonical model for logically-named, data-attributed SVG artifacts.
+
+  NORMALIZATION RULES APPLIED
+  ===========================
+  1. Corel <metadata>/<odm> blocks promoted to real XML attributes on the
+     owning element, then removed entirely. No proprietary markup remains.
+  2. Duplicate metadata that Corel copied onto each group's first child has
+     been discarded. Attributes live ONLY on the named object group.
+  3. Every named object is a <g> element. Never a bare shape. This guarantees
+     downstream code can always assume manipulable children exist.
+  4. ID namespacing:
+       obj_*   - a physical control that maps to an ECU signal
+       meta_*  - annotation / layout scaffolding, carries no signal meaning
+  5. Attribute order on obj_* groups is canonical (see below), so that diffs
+     in version control are minimal and reviewable.
+  6. No nested duplicate IDs. IDs are unique document-wide.
+
+  CANONICAL ATTRIBUTE ORDER
+  =========================
+     id, data-type, data-signal-min, data-signal-max, data-states,
+     data-default-state, data-pin, data-can-spn, data-req-id, class, transform
+
+  ATTRIBUTE CONTRACT
+  ==================
+    data-type          Required. One of: axis | boolean | switchCase
+    data-signal-min    Required when type=axis|boolean. Numeric.
+    data-signal-max    Required when type=axis|boolean. Numeric.
+    data-states        Required when type=switchCase. Comma-separated enum.
+                       Replaces min/max, which cannot express discrete states.
+    data-default-state Optional. Must be a member of data-states.
+    data-pin           Connector pin designation. Ties drawing to harness.
+    data-can-spn       Signal name for CAN/J1939 mapping and header generation.
+    data-req-id        Requirement identifier for V-model traceability.
+
+  LINTABLE INVARIANTS
+  ===================
+    - Every obj_* element is a <g>.
+    - Every obj_* group has data-type.
+    - type=axis|boolean implies both data-signal-min and data-signal-max.
+    - type=switchCase implies data-states, and forbids min/max.
+    - data-default-state, if present, appears in data-states.
+    - No <metadata> or <odm> elements anywhere.
+    - All id values unique.
+
+  NOTE ON SAMPLE VALUES
+  =====================
+  data-pin, data-can-spn and data-req-id values below are ILLUSTRATIVE
+  placeholders demonstrating the pattern. Replace with real assignments.
+  ============================================================================
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="2.34301in" height="5.2218in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 631 1406">
  <defs>
-  <font id="FontID0" horiz-adv-x="666" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
-	<font-face 
-		font-family="Arial">
+  <font id="FontID0" horiz-adv-x="667" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+   <font-face font-family="Arial">
 	</font-face>
-   <missing-glyph><path d="M0 0z"/></missing-glyph>
-   <glyph unicode="3" horiz-adv-x="556"><path d="M42 190l88 12c10,-50 27,-86 51,-108 24,-22 54,-33 89,-33 42,0 77,14 105,43 29,29 43,64 43,106 0,41 -13,74 -40,100 -26,27 -60,40 -100,40 -17,0 -38,-4 -62,-10l9 77c6,-1 11,-1 15,-1 37,0 71,10 101,29 30,20 45,50 45,90 0,33 -11,59 -33,80 -22,22 -50,32 -84,32 -35,0 -63,-11 -86,-32 -23,-22 -38,-55 -44,-98l-88 16c11,59 35,105 73,137 38,33 86,49 143,49 39,0 75,-8 107,-25 33,-17 58,-40 76,-69 17,-28 26,-59 26,-92 0,-31 -8,-59 -25,-84 -16,-25 -41,-45 -74,-60 43,-10 76,-30 99,-61 23,-31 35,-70 35,-116 0,-62 -23,-115 -68,-159 -46,-43 -104,-65 -173,-65 -63,0 -115,19 -157,56 -41,38 -65,86 -71,146z"/></glyph>
-   <glyph unicode="0" horiz-adv-x="556"><path d="M42 353c0,85 9,153 26,205 17,52 43,91 78,119 34,28 77,42 129,42 38,0 72,-8 101,-23 29,-16 53,-38 72,-67 18,-29 33,-65 44,-106 11,-42 16,-99 16,-170 0,-84 -9,-152 -26,-203 -17,-52 -43,-92 -77,-120 -34,-28 -78,-42 -130,-42 -69,0 -123,24 -162,74 -47,60 -71,157 -71,291zm90 0c0,-118 14,-196 41,-235 28,-39 62,-58 102,-58 40,0 74,19 102,58 27,39 41,117 41,235 0,118 -14,196 -41,235 -28,39 -62,58 -103,58 -40,0 -73,-17 -97,-51 -30,-44 -45,-124 -45,-242z"/></glyph>
-   <glyph unicode="2" horiz-adv-x="556"><path d="M503 84l0 -84 -474 0c-1,21 3,42 10,61 12,32 32,64 59,95 27,31 65,67 115,108 77,64 130,115 157,152 28,37 42,73 42,106 0,35 -13,64 -37,88 -26,24 -58,36 -98,36 -43,0 -77,-13 -102,-38 -26,-25 -39,-60 -39,-105l-90 9c6,67 29,119 70,154 40,35 94,53 163,53 68,0 123,-19 163,-57 40,-38 60,-86 60,-142 0,-29 -6,-57 -18,-85 -11,-27 -31,-57 -58,-87 -27,-31 -72,-73 -135,-126 -53,-45 -87,-75 -102,-90 -15,-16 -28,-32 -38,-48l352 0z"/></glyph>
-   <glyph unicode="Y" horiz-adv-x="666"><path d="M279 0l0 303 -276 413 114 0 141 -217c27,-40 51,-80 73,-120 22,37 49,79 80,126l138 211 111 0 -286 -413 0 -303 -95 0z"/></glyph>
-   <glyph unicode="4" horiz-adv-x="556"><path d="M323 0l0 171 -311 0 0 81 327 464 72 0 0 -464 97 0 0 -81 -97 0 0 -171 -88 0zm0 252l0 322 -224 -322 224 0z"/></glyph>
-   <glyph unicode="1" horiz-adv-x="556"><path d="M372 0l-88 0 0 560c-21,-20 -49,-40 -83,-60 -35,-20 -66,-36 -93,-46l0 85c49,23 92,51 129,84 37,33 63,65 78,96l57 0 0 -719z"/></glyph>
-   <glyph unicode="X" horiz-adv-x="666"><path d="M4 0l277 372 -244 344 113 0 131 -183c27,-38 46,-67 56,-87 17,25 36,51 57,80l144 190 103 0 -248 -340 267 -376 -116 0 -181 255c-10,15 -20,29 -29,44 -16,-24 -27,-41 -34,-51l-182 -248 -114 0z"/></glyph>
+   <missing-glyph>
+    <path d="M0 0z"/>
+   </missing-glyph>
+   <glyph unicode="3" horiz-adv-x="556">
+    <path d="M41.9938 189.989l88.0072 12.0117c10.1674,-50.0095 27.1683,-85.9974 51.3336,-108.011 24.1653,-21.99 53.84,-32.985 89.0003,-32.985 41.6627,0 76.823,14.329 105.174,42.9869 28.3269,28.6815 42.4903,64.1729 42.4903,106.498 0,40.3386 -13.1703,73.6782 -39.6765,100.019 -26.317,26.1515 -59.8222,39.3219 -100.657,39.3219 -16.6698,0 -37.3357,-3.33396 -62.1631,-9.83638l9.83638 77.0122c5.84035,-0.662064 10.664,-1.01674 14.1634,-1.01674 37.6667,0 71.3374,9.83638 101.509,29.3436 29.982,19.5072 44.9967,49.4893 44.9967,89.9934 0,32.181 -10.995,58.8291 -32.8431,80.0151 -21.8245,21.1624 -49.9858,31.6608 -84.5077,31.6608 -34.3327,0 -62.8251,-10.8295 -85.6663,-32.5121 -22.8176,-21.6589 -37.5012,-54.1474 -43.9799,-97.4889l-88.0072 16.0078c10.8295,58.9946 35.1603,104.819 73.3236,137.331 37.9977,32.4884 85.5008,48.6617 142.178,48.6617 38.9908,0 75.0024,-8.32309 107.822,-25.1584 33.0086,-16.6698 58.167,-39.511 75.4989,-68.3344 17.4974,-29.0126 26.1752,-59.6803 26.1752,-92.1687 0,-30.8333 -8.32309,-58.8291 -24.8274,-84.1767 -16.6698,-25.3239 -41.3317,-45.4932 -73.8438,-60.5079 42.3484,-9.64721 75.1679,-29.982 98.6711,-60.8153 23.3377,-30.6677 34.9948,-69.3512 34.9948,-115.506 0,-62.4941 -22.8176,-115.672 -68.3344,-159.155 -45.6588,-43.507 -103.329,-65.1896 -172.988,-65.1896 -62.8488,0 -115.01,18.8452 -156.507,56.3464 -41.6627,37.5012 -65.3315,85.9974 -71.1719,145.654z"/>
+   </glyph>
+   <glyph unicode="0" horiz-adv-x="556">
+    <path d="M41.9938 353.329c0,84.5077 8.67776,152.842 26.0096,204.507 17.4974,51.8301 43.3415,91.6722 77.6743,119.503 34.1672,27.8303 77.3196,41.6627 129.315,41.6627 38.3288,0 71.9994,-7.66102 101.178,-23.1722 28.9889,-15.4876 52.9887,-37.8322 71.6684,-66.9867 18.656,-29.0126 33.3396,-64.5039 44.0036,-106.332 10.8295,-41.8519 16.1496,-98.3401 16.1496,-169.181 0,-83.9875 -8.65412,-151.991 -25.8205,-203.656 -17.1664,-51.8301 -43.0105,-91.6722 -77.3432,-119.668 -34.1672,-27.9958 -77.4851,-42.0174 -129.835,-42.0174 -68.831,0 -123.002,24.52 -162.324,73.6782 -47.172,60.0113 -70.6753,157.169 -70.6753,291.663zm90.017 -0.331032c0,-117.824 13.6669,-196.16 41.1662,-234.82 27.4993,-38.849 61.501,-58.167 101.816,-58.167 40.3386,0 74.3403,19.4836 101.84,58.3325 27.4993,38.9908 41.1662,117.162 41.1662,234.654 0,117.824 -13.6669,196.16 -41.1662,234.843 -27.3338,38.8253 -61.6665,58.167 -102.833,58.167 -40.3386,0 -72.6615,-17.1664 -96.8268,-51.3336 -30.1712,-43.507 -45.1622,-124.184 -45.1622,-241.677z"/>
+   </glyph>
+   <glyph unicode="2" horiz-adv-x="556">
+    <path d="M503.003 84.0112l0 -84.0112 -474.014 0c-0.662064,21.1624 2.83742,41.4972 10.3329,61.17 12.1772,32.1574 31.6845,64.0074 58.5217,95.1717 26.8136,31.1643 65.166,67.1522 114.986,107.987 77.5087,63.8419 130.166,114.348 157.666,151.66 27.6648,37.3357 41.4972,72.6851 41.4972,106.001 0,34.8529 -12.4846,64.1729 -37.5012,88.1727 -24.9929,23.8343 -57.6468,35.846 -97.8199,35.846 -42.514,0 -76.5157,-12.6738 -102.005,-37.9977 -25.4895,-25.1821 -38.3288,-60.1769 -38.6598,-105.008l-90.017 9.0088c6.17138,67.3177 29.5091,118.651 69.8477,153.977 40.5041,35.3495 94.6515,53.0124 162.82,53.0124 68.6655,0 123.168,-19.0107 163.175,-57.1739 40.1731,-38.1632 60.1769,-85.5008 60.1769,-141.824 0,-28.6815 -5.84035,-56.8429 -17.6866,-84.5077 -11.6571,-27.8303 -31.1643,-56.9848 -58.3325,-87.6525 -27.3338,-30.5022 -72.496,-72.6851 -135.487,-126.005 -52.8469,-44.3346 -86.8486,-74.3403 -101.84,-90.1825 -14.991,-15.8186 -27.3338,-31.6608 -37.1702,-47.6449l351.509 0z"/>
+   </glyph>
+   <glyph unicode="Y" horiz-adv-x="667">
+    <path d="M278.823 0l0 303.343 -275.986 412.655 113.993 0 141.492 -216.66c26.3407,-40.0076 50.837,-80.3462 73.1817,-120.496 21.8245,37.5012 48.3307,79.4949 79.1639,126.147l138.655 211.009 110.517 0 -286.012 -412.655 0 -303.343 -95.0061 0z"/>
+   </glyph>
+   <glyph unicode="4" horiz-adv-x="556">
+    <path d="M322.993 0l0 171.002 -310.981 0 0 81.0082 326.989 463.988 71.9994 0 0 -463.988 96.9923 0 0 -81.0082 -96.9923 0 0 -171.002 -88.0072 0zm0 252.01l0 321.999 -224.487 -321.999 224.487 0z"/>
+   </glyph>
+   <glyph unicode="1" horiz-adv-x="556">
+    <path d="M372.009 0l-88.0072 0 0 560.342c-21.1624,-20.3348 -48.9927,-40.5041 -83.3255,-60.6734 -34.3327,-20.1693 -65.3315,-35.3258 -92.6653,-45.3277l0 84.9806c49.1582,23.0067 92.1451,51.0026 128.984,84.0112 36.8391,32.8431 63.0143,64.6694 78.3363,95.6682l56.6774 0 0 -719.001z"/>
+   </glyph>
+   <glyph unicode="X" horiz-adv-x="667">
+    <path d="M4.32706 0l276.672 371.489 -243.663 344.51 112.835 0 130.497 -183.155c27.1683,-38.0214 45.9898,-67.0103 56.8429,-87.1796 16.1496,24.9929 35.1603,51.6646 56.9848,79.826l143.006 190.509 103.826 0 -248.652 -340.324 267.663 -375.674 -116.334 0 -180.672 255.344c-10.3329,14.4945 -20.1693,28.9889 -29.5091,43.3179 -15.8186,-23.9998 -27.1446,-40.8351 -34.3327,-50.3168l-181.311 -248.345 -113.851 0z"/>
+   </glyph>
   </font>
   <style type="text/css">
-   <![CDATA[
+   
     @font-face { font-family:"Arial";src:url("#FontID0") format(svg)}
-    .str0 {stroke:#373435;stroke-width:2.66072}
-    .str2 {stroke:#A9ABAE;stroke-width:1.33074}
-    .str1 {stroke:#373435;stroke-width:2.66072;stroke-dasharray:5.321436 7.982155}
+    .str0 {stroke:#373435;stroke-width:3.735}
+    .str3 {stroke:#A9ABAE;stroke-width:1.8675}
+    .str1 {stroke:black;stroke-width:3.735;stroke-dasharray:7.467884 11.201826}
+    .str2 {stroke:black;stroke-width:1.86962;stroke-dasharray:3.739241 5.608862}
     .fil1 {fill:none}
+    .fil2 {fill:#373435}
     .fil0 {fill:#FEFEFE}
-    .fil3 {fill:#373435}
-    .fil2 {fill:#FEFEFE;fill-opacity:0.749020}
-    .fnt0 {font-weight:normal;font-size:31.9354px;font-family:'Arial'}
-   ]]>
+    .fil3 {fill:#FEFEFE;fill-opacity:0.749020}
+    .fnt0 {font-weight:normal;font-size:44.8243px;font-family:'Arial'}
+   
   </style>
  </defs>
- <g id="Layer_x0020_2">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <path class="fil0 str0" d="M264 1003l0 -883c-24,1 -65,4 -105,20 -35,15 -90,35 -92,80 0,6 0,54 0,61 0,19 3,23 11,39 12,22 34,25 51,40 16,16 28,36 37,52 8,16 12,28 12,43 5,124 3,248 2,373 0,6 0,15 -5,19 -11,10 -23,20 -34,31 -2,2 -3,4 -3,7 0,24 -1,47 0,70 0,3 0,7 3,9l49 39 74 0z"/>
-  <path class="fil0 str0" d="M264 1003l0 -883c24,1 65,4 105,20 35,15 91,35 92,80 0,6 0,54 0,61 0,19 -2,23 -11,39 -11,22 -34,25 -50,40 -17,16 -29,36 -38,52 -8,16 -12,28 -12,43 -4,124 -2,248 -1,373 0,6 -1,15 4,19 11,10 23,20 34,31 2,2 4,4 4,7 0,24 1,47 0,70 0,3 -1,7 -4,9l-49 39 -74 0z"/>
-  <path class="fil0 str0" d="M264 143c33,1 63,5 89,16 62,27 84,42 76,69 -2,7 -8,13 -14,23 -13,25 -34,57 -59,97 -3,4 -6,7 -10,9 -5,4 -10,7 -17,7 -4,1 -9,0 -13,1 -18,0 -34,-1 -52,-1 -17,0 -34,1 -51,1 -5,-1 -10,0 -14,-1 -6,0 -12,-3 -17,-7 -4,-2 -7,-5 -9,-9 -26,-40 -47,-72 -60,-97 -6,-10 -12,-16 -14,-23 -8,-27 14,-42 76,-69 27,-11 57,-15 89,-16z"/>
-  <ellipse class="fil0 str0" cx="145" cy="212" rx="29" ry="15"/>
-  <ellipse class="fil0 str0" cx="145" cy="210" rx="24" ry="13"/>
-  <g id="_2886302507248">
-   <g>
-    <ellipse class="fil0 str0" cx="221" cy="249" rx="28" ry="15"/>
-    <path class="fil1 str0" d="M255 252c0,10 -15,17 -34,17 -18,0 -33,-7 -33,-17"/>
+ <g id="stwGraphic_Layer_1">
+  <g id="stwGraphic_ControlSurface">
+   <g id="obj_joystickGripYaxis" data-type="axis" data-signal-min="-100" data-signal-max="100" data-pin="X2" data-can-spn="ANALOG_IN_01" data-req-id="FR-001">
+    <path class="fil0 str0" d="M352 1402l0 -1239c-33,0 -92,6 -148,29 -48,19 -127,48 -129,111 0,8 0,77 0,87 0,25 4,31 17,54 14,29 45,34 70,56 23,21 40,50 52,71 11,23 17,40 17,61 6,175 4,350 2,525 0,8 0,20 -6,27 -15,14 -31,27 -48,41 -2,4 -4,9 -4,13 0,31 -2,64 0,96 0,6 0,10 4,14l69 54 104 0 0 0z"/>
+    <path class="fil0 str0" d="M352 1402l0 -1239c33,0 92,6 148,29 48,19 127,48 129,111 0,8 0,77 0,87 0,25 -4,31 -17,54 -14,29 -46,34 -71,56 -23,21 -39,50 -52,71 -10,23 -16,40 -16,61 -7,175 -4,350 -2,525 0,8 0,20 6,27 14,14 31,27 48,41 2,4 4,9 4,13 0,31 2,64 0,96 0,6 0,10 -4,14l-69 54 -104 0 0 0z"/>
+    <path class="fil0 str0" d="M352 194c46,2 87,7 125,23 87,38 116,58 106,98 -2,10 -10,19 -19,31 -18,36 -48,82 -83,138 -4,4 -8,8 -12,12 -9,4 -17,9 -25,11 -7,0 -13,0 -19,0 -25,0 -48,0 -73,0 -25,0 -48,0 -73,0 -6,0 -13,0 -19,0 -8,-2 -16,-7 -25,-11 -4,-4 -8,-8 -12,-12 -36,-56 -65,-102 -84,-138 -8,-12 -16,-21 -18,-31 -11,-40 18,-60 106,-98 37,-16 79,-21 125,-23l0 0z"/>
    </g>
-   <ellipse class="fil0 str0" cx="221" cy="171" rx="28" ry="15"/>
-   <path class="fil1 str0" d="M188 171c0,-10 15,-18 33,-18 19,0 34,8 34,18"/>
-   <path class="fil1 str0" d="M188 171l0 81"/>
-   <path class="fil1 str0" d="M255 171l0 81"/>
-   <rect class="fil0 str0" x="188" y="192" width="67.003" height="34.5454"/>
-   <path class="fil1 str0" d="M255 260c0,9 -15,17 -34,17 -18,0 -33,-8 -33,-17"/>
-   <path class="fil1 str0" d="M188 260l0 -12"/>
-   <path class="fil1 str0" d="M255 260l0 -12"/>
+   <g id="obj_pushButton_01" data-type="boolean" data-signal-min="0" data-signal-max="1" data-pin="X0" data-can-spn="DIGITAL_IN_01" data-req-id="FR-010">
+    <ellipse class="fil0 str0" cx="185" cy="291" rx="40" ry="21"/>
+    <ellipse class="fil0 str0" cx="185" cy="286" rx="33" ry="17"/>
+   </g>
+   <g id="obj_3posRocker_01" data-type="switchCase" data-states="A,neutral,B" data-default-state="neutral" data-pin="X1" data-can-spn="DIGITAL_IN_02" data-req-id="FR-011">
+    <g>
+     <ellipse class="fil0 str0" cx="291" cy="343" rx="40" ry="21"/>
+     <path class="fil1 str0" d="M339 347c0,12 -20,25 -48,25 -25,0 -47,-13 -47,-25"/>
+    </g>
+    <ellipse class="fil0 str0" cx="291" cy="232" rx="40" ry="21"/>
+    <path class="fil1 str0" d="M244 232c0,-14 22,-25 47,-25 28,0 48,11 48,25"/>
+    <line class="fil1 str0" x1="244" y1="232" x2="244" y2="347"/>
+    <line class="fil1 str0" x1="339" y1="232" x2="339" y2="347"/>
+    <rect class="fil0 str0" x="244" y="261" width="94.0449" height="48.4883"/>
+    <path class="fil1 str0" d="M339 357c0,15 -20,25 -48,25 -25,0 -47,-10 -47,-25"/>
+    <line class="fil1 str0" x1="244" y1="357" x2="244" y2="340"/>
+    <line class="fil1 str0" x1="339" y1="357" x2="339" y2="340"/>
+   </g>
+   <g id="obj_FricHoldSlider_01" data-type="axis" data-signal-min="0" data-signal-max="100" data-pin="X3" data-can-spn="ANALOG_IN_02" data-req-id="FR-002">
+    <path class="fil1 str0" d="M394 268c0,-5 6,-9 12,-9 8,0 15,4 15,9m0 41l0 -6m-27 6l0 -6m27 6c0,4 -7,9 -15,9 -6,0 -12,-5 -12,-9m27 -41l0 37m-27 -37l0 37"/>
+    <path class="fil1 str0" d="M389 232c0,-14 9,-25 17,-25 10,0 19,11 19,25m0 125l0 -17m-36 17l0 -17m36 17c0,15 -9,25 -19,25 -8,0 -17,-10 -17,-25m36 -125l0 115m-36 -115l0 115"/>
+    <g>
+     <ellipse class="fil0 str0" cx="406" cy="257" rx="48" ry="25"/>
+     <ellipse class="fil0 str0" cx="406" cy="253" rx="40" ry="21"/>
+    </g>
+   </g>
+   <g id="obj_pushButton_04" data-type="boolean" data-signal-min="0" data-signal-max="1" data-pin="X4" data-can-spn="DIGITAL_IN_04" data-req-id="FR-013">
+    <ellipse class="fil0 str0" cx="521" cy="295" rx="40" ry="21"/>
+    <ellipse class="fil0 str0" cx="521" cy="291" rx="33" ry="17"/>
+   </g>
+   <g id="obj_pushButton_02" data-type="boolean" data-signal-min="0" data-signal-max="1" data-pin="X1" data-can-spn="DIGITAL_IN_02" data-req-id="FR-012">
+    <ellipse class="fil0 str0" cx="277" cy="453" rx="40" ry="21"/>
+    <ellipse class="fil0 str0" cx="277" cy="451" rx="33" ry="17"/>
+   </g>
+   <g id="obj_pushButton_03" data-type="boolean" data-signal-min="0" data-signal-max="1" data-pin="X3" data-can-spn="DIGITAL_IN_03" data-req-id="FR-014">
+    <ellipse class="fil0 str0" cx="431" cy="457" rx="40" ry="21"/>
+    <ellipse class="fil0 str0" cx="431" cy="453" rx="33" ry="17"/>
+   </g>
+   <g id="obj_trigger_01" data-type="boolean" data-signal-min="0" data-signal-max="1" data-pin="X2" data-can-spn="DIGITAL_IN_05" data-req-id="FR-015">
+    <rect class="fil0 str1" x="338" y="532" width="27.9648" height="174.562"/>
+    <line class="fil1 str2" x1="338" y1="680" x2="366" y2="680"/>
+    <line class="fil1 str2" x1="338" y1="693" x2="366" y2="693"/>
+    <line class="fil1 str2" x1="338" y1="658" x2="366" y2="658"/>
+    <line class="fil1 str2" x1="338" y1="619" x2="366" y2="619"/>
+    <line class="fil1 str2" x1="338" y1="558" x2="366" y2="558"/>
+    <line class="fil1 str2" x1="338" y1="544" x2="366" y2="544"/>
+    <line class="fil1 str2" x1="338" y1="580" x2="366" y2="580"/>
+    <line class="fil1 str2" x1="338" y1="539" x2="366" y2="539"/>
+    <line class="fil1 str2" x1="338" y1="700" x2="366" y2="700"/>
+   </g>
+   <g id="meta_GridBoxColsRows">
+    <g transform="matrix(1 0 0 1 -1171.63 -673.953)">
+     <text x="1172" y="967" id="row_Y0" class="fil2 fnt0">Y0</text>
+    </g>
+    <g transform="matrix(1 0 0 1 -1171.63 -492.746)">
+     <text x="1172" y="967" id="row_Y1" class="fil2 fnt0">Y1</text>
+    </g>
+    <g transform="matrix(1 0 0 1 -1171.63 336.222)">
+     <text x="1172" y="967" id="row_Y2" class="fil2 fnt0">Y3</text>
+    </g>
+    <g transform="matrix(1 0 0 1 -1171.63 -128.25)">
+     <text x="1172" y="967" id="row_Y3" class="fil2 fnt0">Y2</text>
+    </g>
+    <g transform="matrix(1 0 0 1 -1046.66 -850.993)">
+     <text x="1172" y="967" id="col_X0" class="fil2 fnt0">X0</text>
+    </g>
+    <g transform="matrix(1 0 0 1 -915.442 -850.993)">
+     <text x="1172" y="967" id="col_X1" class="fil2 fnt0">X1</text>
+    </g>
+    <g transform="matrix(1 0 0 1 -848.792 -934.307)">
+     <text x="1172" y="967" id="col_X2" class="fil2 fnt0">X2</text>
+    </g>
+    <g transform="matrix(1 0 0 1 -775.893 -850.993)">
+     <text x="1172" y="967" id="col_X3" class="fil2 fnt0">X3</text>
+    </g>
+    <g transform="matrix(1 0 0 1 -646.757 -850.993)">
+     <text x="1172" y="967" id="col_X4" class="fil2 fnt0">X4</text>
+    </g>
+   </g>
+   <g id="meta_GridBox">
+    <polygon class="fil3" points="233,157 331,157 331,399 233,399 "/>
+    <polygon class="fil3" points="331,157 373,157 373,399 331,399 "/>
+    <polygon class="fil3" points="373,157 471,157 471,399 373,399 "/>
+    <polygon class="fil3" points="471,157 629,157 629,399 471,399 "/>
+    <polygon class="fil3" points="75,399 233,399 233,520 75,520 "/>
+    <polygon class="fil3" points="233,399 331,399 331,520 233,520 "/>
+    <polygon class="fil3" points="331,399 373,399 373,520 331,520 "/>
+    <polygon class="fil3" points="373,399 471,399 471,520 373,520 "/>
+    <polygon class="fil3" points="471,399 629,399 629,520 471,520 "/>
+    <polygon class="fil3" points="75,520 233,520 233,1215 75,1215 "/>
+    <polygon class="fil3" points="233,520 331,520 331,1215 233,1215 "/>
+    <polygon class="fil3" points="331,520 373,520 373,1215 331,1215 "/>
+    <polygon class="fil3" points="373,520 471,520 471,1215 373,1215 "/>
+    <polygon class="fil3" points="471,520 629,520 629,1215 471,1215 "/>
+    <polygon class="fil3" points="75,1215 233,1215 233,1405 75,1405 "/>
+    <polygon class="fil3" points="233,1215 331,1215 331,1405 233,1405 "/>
+    <polygon class="fil3" points="331,1215 373,1215 373,1405 331,1405 "/>
+    <polygon class="fil3" points="373,1215 471,1215 471,1405 373,1405 "/>
+    <polygon class="fil3" points="471,1215 629,1215 629,1405 471,1405 "/>
+    <polyline class="fil1 str3" points="75,1405 75,1405 75,1215 75,520 75,399 75,157 75,155 "/>
+    <polyline class="fil1 str3" points="233,1405 233,1405 233,1215 233,520 233,399 233,157 233,155 "/>
+    <polyline class="fil1 str3" points="331,1405 331,1405 331,1215 331,520 331,399 331,157 331,155 "/>
+    <polyline class="fil1 str3" points="373,1405 373,1405 373,1215 373,520 373,399 373,157 373,155 "/>
+    <polyline class="fil1 str3" points="471,1405 471,1405 471,1215 471,520 471,399 471,157 471,155 "/>
+    <polyline class="fil1 str3" points="629,1405 629,1405 629,1215 629,520 629,399 629,157 629,155 "/>
+    <polyline class="fil1 str3" points="73,1405 75,1405 233,1405 331,1405 373,1405 471,1405 629,1405 629,1405 "/>
+    <polyline class="fil1 str3" points="73,1215 75,1215 233,1215 331,1215 373,1215 471,1215 629,1215 629,1215 "/>
+    <polyline class="fil1 str3" points="73,520 75,520 233,520 331,520 373,520 471,520 629,520 629,520 "/>
+    <polyline class="fil1 str3" points="73,399 75,399 233,399 331,399 373,399 471,399 629,399 629,399 "/>
+    <polyline class="fil1 str3" points="73,157 75,157 233,157 331,157 373,157 471,157 629,157 629,157 "/>
+   </g>
   </g>
-  <path class="fil1 str0" d="M293 196c0,-3 5,-6 10,-6 6,0 10,3 10,6m0 29l0 -3m-20 3l0 -4m20 4c0,4 -4,6 -10,6 -5,0 -10,-2 -10,-6m20 -29l0 27m-20 -27l0 27"/>
-  <path class="fil1 str0" d="M290 171c0,-10 6,-18 13,-18 7,0 13,8 13,18m0 89l0 -12m-26 12l0 -12m26 12c0,9 -6,17 -13,17 -7,0 -13,-8 -13,-17m26 -89l0 81m-26 -81l0 81"/>
-  <g id="_2886302511824">
-   <ellipse class="fil0 str0" cx="303" cy="189" rx="34" ry="18"/>
-   <ellipse class="fil0 str0" cx="303" cy="186" rx="28" ry="15"/>
-  </g>
-  <ellipse class="fil0 str0" cx="384" cy="215" rx="29" ry="15"/>
-  <ellipse class="fil0 str0" cx="384" cy="213" rx="24" ry="13"/>
-  <ellipse class="fil0 str0" cx="210" cy="329" rx="29" ry="15"/>
-  <ellipse class="fil0 str0" cx="210" cy="326" rx="24" ry="13"/>
-  <ellipse class="fil0 str0" cx="320" cy="331" rx="29" ry="15"/>
-  <ellipse class="fil0 str0" cx="320" cy="329" rx="24" ry="13"/>
-  <rect class="fil0 str1" x="255" y="385" width="19.9233" height="124.367"/>
-  <g id="_2886302513328">
-   <path class="fil2" d="M179 117l70 0 0 172 -70 0 0 -172z"/>
-   <path class="fil2" d="M249 117l29 0 0 172 -29 0 0 -172z"/>
-   <path class="fil2" d="M278 117l71 0 0 172 -71 0 0 -172z"/>
-   <path class="fil2" d="M349 117l112 0 0 172 -112 0 0 -172z"/>
-   <path class="fil2" d="M66 289l113 0 0 86 -113 0 0 -86z"/>
-   <path class="fil2" d="M179 289l70 0 0 86 -70 0 0 -86z"/>
-   <path class="fil2" d="M249 289l29 0 0 86 -29 0 0 -86z"/>
-   <path class="fil2" d="M278 289l71 0 0 86 -71 0 0 -86z"/>
-   <path class="fil2" d="M349 289l112 0 0 86 -112 0 0 -86z"/>
-   <path class="fil2" d="M66 375l113 0 0 497 -113 0 0 -497z"/>
-   <path class="fil2" d="M179 375l70 0 0 497 -70 0 0 -497z"/>
-   <path class="fil2" d="M249 375l29 0 0 497 -29 0 0 -497z"/>
-   <path class="fil2" d="M278 375l71 0 0 497 -71 0 0 -497z"/>
-   <path class="fil2" d="M349 375l112 0 0 497 -112 0 0 -497z"/>
-   <path class="fil2" d="M66 872l113 0 0 133 -113 0 0 -133z"/>
-   <path class="fil2" d="M179 872l70 0 0 133 -70 0 0 -133z"/>
-   <path class="fil2" d="M249 872l29 0 0 133 -29 0 0 -133z"/>
-   <path class="fil2" d="M278 872l71 0 0 133 -71 0 0 -133z"/>
-   <path class="fil2" d="M349 872l112 0 0 133 -112 0 0 -133z"/>
-   <path class="fil1 str2" d="M66 1006l0 -1 0 -133 0 -497 0 -86 0 -172 0 -1"/>
-   <path class="fil1 str2" d="M179 1006l0 -1 0 -133 0 -497 0 -86 0 -172 0 -1"/>
-   <path class="fil1 str2" d="M249 1006l0 -1 0 -133 0 -497 0 -86 0 -172 0 -1"/>
-   <path class="fil1 str2" d="M278 1006l0 -1 0 -133 0 -497 0 -86 0 -172 0 -1"/>
-   <path class="fil1 str2" d="M349 1006l0 -1 0 -133 0 -497 0 -86 0 -172 0 -1"/>
-   <path class="fil1 str2" d="M461 1006l0 -1 0 -133 0 -497 0 -86 0 -172 0 -1"/>
-   <path class="fil1 str2" d="M66 1005l0 0 113 0 70 0 29 0 71 0 112 0 1 0"/>
-   <path class="fil1 str2" d="M66 872l0 0 113 0 70 0 29 0 71 0 112 0 1 0"/>
-   <path class="fil1 str2" d="M66 375l0 0 113 0 70 0 29 0 71 0 112 0 1 0"/>
-   <path class="fil1 str2" d="M66 289l0 0 113 0 70 0 29 0 71 0 112 0 1 0"/>
-   <path class="fil1 str2" d="M66 117l0 0 113 0 70 0 29 0 71 0 112 0 1 0"/>
-  </g>
-  <text x="14" y="213"  class="fil3 fnt0">Y0</text>
-  <text x="14" y="342"  class="fil3 fnt0">Y1</text>
-  <text x="14" y="933"  class="fil3 fnt0">Y3</text>
-  <text x="14" y="603"  class="fil3 fnt0">Y2</text>
-  <text x="102" y="88"  class="fil3 fnt0">X0</text>
-  <text x="195" y="88"  class="fil3 fnt0">X1</text>
-  <text x="243" y="29"  class="fil3 fnt0">X2</text>
-  <text x="295" y="88"  class="fil3 fnt0">X3</text>
-  <text x="387" y="88"  class="fil3 fnt0">X4</text>
  </g>
 </svg>
